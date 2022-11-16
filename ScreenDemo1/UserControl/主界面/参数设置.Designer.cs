@@ -84,11 +84,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(105, 156);
+            this.label1.Location = new System.Drawing.Point(50, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 22;
-            this.label1.Text = "本地地址:";
+            this.label1.Text = "本地数据库地址:";
             // 
             // ProcessNo
             // 
