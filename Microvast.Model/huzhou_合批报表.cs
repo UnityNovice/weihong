@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SqlSugar;
+using System;
 using System.Collections.Generic;
 		
 namespace Microvast.Model
@@ -8,11 +9,11 @@ namespace Microvast.Model
 		public huzhou_合批报表()
 		{
 		}
-		
-		///<summary>
-		///
-		///</summary>
-		public int ID { get; set; }
+        [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
+        ///<summary>
+        ///
+        ///</summary>
+        public int ID { get; set; }
 		
 		///<summary>
 		///合批时间

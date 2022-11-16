@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-		
+using SqlSugar;
 namespace Microvast.Model
 {
 	public class huzhou_产线基础数据
@@ -8,11 +8,11 @@ namespace Microvast.Model
 		public huzhou_产线基础数据()
 		{
 		}
-		
-		///<summary>
-		///
-		///</summary>
-		public int Id { get; set; }
+        [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
+        ///<summary>
+        ///
+        ///</summary>
+        public int Id { get; set; }
 		
 		///<summary>
 		///

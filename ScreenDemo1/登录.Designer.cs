@@ -64,9 +64,9 @@
             this.lblUser.ForeColor = System.Drawing.Color.Black;
             this.lblUser.Location = new System.Drawing.Point(34, 120);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(90, 21);
+            this.lblUser.Size = new System.Drawing.Size(58, 21);
             this.lblUser.TabIndex = 6;
-            this.lblUser.Text = "登录名称：";
+            this.lblUser.Text = "工号：";
             // 
             // txtUser
             // 
@@ -79,7 +79,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(206, 29);
             this.txtUser.TabIndex = 12;
-            this.txtUser.Text = "admin";
+            this.txtUser.Text = "0000000";
             // 
             // 登录btn
             // 
