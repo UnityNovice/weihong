@@ -34,7 +34,7 @@ namespace ScreenDemo1.Components.通用弹窗
         public 通用弹窗(string name, int id = 0, int Formtype = 1)
         {
             InitializeComponent();
-          
+
             #region 赋值
             this.name = name;
             this.Id = id;
