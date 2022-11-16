@@ -1,0 +1,38 @@
+
+
+发生时间：2022_11_16 14:57:21    System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ScreenDemo1.SmallForm.拆批.确认_Click(Object sender, EventArgs e) 位置 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\ScreenDemo1\SmallForm\拆批.cs:行号 47
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_16 14:59:13    System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ScreenDemo1.SmallForm.拆批.确认_Click(Object sender, EventArgs e) 位置 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\ScreenDemo1\SmallForm\拆批.cs:行号 47
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_16 15:02:11    System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 '时间'，表 'huzhou_db.dbo.huzhou_拆批'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 SqlSugar.AdoProvider.ExecuteCommand(String sql, SugarParameter[] parameters)
+   在 SqlSugar.InsertableProvider`1.ExecuteCommand()
+   在 ScreenDemo1.SmallForm.拆批.确认_Click(Object sender, EventArgs e) 位置 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\ScreenDemo1\SmallForm\拆批.cs:行号 49
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:105dab5d-3415-48e3-a638-7453cd50ae7e
+Error Number:515,State:2,Class:16

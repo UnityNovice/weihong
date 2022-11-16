@@ -1,0 +1,18 @@
+
+
+发生时间：2022_11_14 17:30:23    System.Data.SqlClient.SqlException (0x80131904): 对象名 'huzhou_报废报表' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.InitInfo(String name) 位置 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 425
+   在 ScreenDemo1.Pages.基础信息.通用模板..ctor(String TempTablename, String TempCodename, String TempTimename) 位置 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 179
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\ScreenDemo1\Form1.cs:行号 232
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:e2fd8bb2-b399-4f20-a849-a6d9c1b68330
+Error Number:208,State:1,Class:16

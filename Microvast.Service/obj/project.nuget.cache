@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ojIjGa44Qq5yzCZrKd2TVjXyIJnhfjBfmbKB3L96lhSWWrc0hWhMNXnLjYFwzw1s9S8er2jD4OQRohLvnaYk8w==",
+  "success": true,
+  "projectFilePath": "E:\\Git\\C#\\ScreenDemo1(1)\\ScreenDemo1\\Microvast.Service\\Microvast.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CaiJiale\\.nuget\\packages\\sqlsugar\\5.1.3.30\\sqlsugar.5.1.3.30.nupkg.sha512"
+  ],
+  "logs": []
+}

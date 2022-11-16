@@ -1,0 +1,6 @@
+E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\bin\Debug\Microvast.ViewModel.dll
+E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\bin\Debug\Microvast.ViewModel.pdb
+E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.csproj.AssemblyReference.cache
+E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.csproj.CoreCompileInputs.cache
+E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.dll
+E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.pdb
