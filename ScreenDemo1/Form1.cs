@@ -193,7 +193,7 @@ namespace ScreenDemo1
         }
         private void uiNavMenu1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-    
+
             switch (e.Node.Text.ToString().Replace("▼", ""))
             {
                 case "正极搅拌": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(搅拌正极主界面); break;
@@ -207,7 +207,7 @@ namespace ScreenDemo1
                 case "异常日志": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("异常日志", "", "")); break;
                 case "操作日志": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("操作日志", "", "")); break;
                 case "权限管理": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("权限管理", "", "")); break;
-                case "产品型号": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("产品型号", "", "")); break;
+                case "产品基础数据": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("产品型号", "", "")); break;
                 case "工序基础数据": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("工序管理", "", "")); break;
                 case "设备台账": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("设备台账", "", "")); break;
                 case "产线基础数据": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("产线基础数据", "", "")); break;
@@ -219,8 +219,8 @@ namespace ScreenDemo1
                 case "投料口基础数据": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("投料口基础数据", "", "")); break;
                 case "工艺参数": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("工艺参数信息", "", "")); break;
                 case "工艺配方": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("工艺配方信息", "", "")); break;
-                case "拆批报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("拆批", "", "")); break;
-                case "合批报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("合批", "", "")); break;
+                case "拆批报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("拆批报表", "", "")); break;
+                case "合批报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("合批报表", "", "")); break;
                 case "过站数据报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("过站数据报表", "工单号", "日期")); break;
                 case "产品数据报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("产品数据报表", "", "")); break;
                 case "物料绑定报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("物料绑定报表", "", "")); break;
@@ -228,10 +228,16 @@ namespace ScreenDemo1
                 case "工单过站监控报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("工单过站监控报表", "", "")); break;
                 case "工单报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("工单报表", "", "")); break;
                 case "设备状态报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("设备状态报表", "", "")); break;
-                case "生产报工": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("生产报工", "", "")); break;
+                case "生产报工": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("生产报工报表", "", "")); break;
                 case "报废报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("报废报表", "", "")); break;
+                case "生产工单": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("生产工单", "", "")); break;
+                case "基础物料信息表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("基础物料信息表", "", "")); break;
+                case "料架物料信息": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("料架物料信息", "", "")); break;
+
+
                 case "参数设置": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(参数设置); break;
-                default: ;break;
+
+                default:; break;
             }
             //MessageBox.Show(e.Node.Text);
         }

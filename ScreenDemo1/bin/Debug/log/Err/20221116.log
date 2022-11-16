@@ -51,3 +51,39 @@ Error Number:515,State:2,Class:16
    在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
 ClientConnectionId:907b4da8-ec5d-4de7-9090-82e4b9faacb1
 Error Number:544,State:1,Class:16
+
+
+发生时间：2022_11_16 16:17:43    System.Data.SqlClient.SqlException (0x80131904): 对象名 'huzhou_拆批' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.InitInfo(String name) 位置 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 425
+   在 ScreenDemo1.Pages.基础信息.通用模板..ctor(String TempTablename, String TempCodename, String TempTimename) 位置 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 179
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\Form1.cs:行号 222
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:9cd094b4-30fc-47e6-9242-b4020fcbdec3
+Error Number:208,State:1,Class:16
+
+
+发生时间：2022_11_16 16:17:49    System.Data.SqlClient.SqlException (0x80131904): 对象名 'huzhou_合批' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.InitInfo(String name) 位置 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 425
+   在 ScreenDemo1.Pages.基础信息.通用模板..ctor(String TempTablename, String TempCodename, String TempTimename) 位置 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 179
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\Form1.cs:行号 223
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:9cd094b4-30fc-47e6-9242-b4020fcbdec3
+Error Number:208,State:1,Class:16
