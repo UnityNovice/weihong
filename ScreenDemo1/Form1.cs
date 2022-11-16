@@ -233,8 +233,6 @@ namespace ScreenDemo1
                 case "生产工单": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("生产工单", "", "")); break;
                 case "基础物料信息表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("基础物料信息表", "", "")); break;
                 case "料架物料信息": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("料架物料信息", "", "")); break;
-
-
                 case "参数设置": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(参数设置); break;
 
                 default:; break;
