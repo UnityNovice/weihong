@@ -17,13 +17,13 @@ namespace ScreenDemo1.SmallForm
 {
     public partial class 拆批 : UIForm
     {
-        public huzhou_拆批 拆批记录变量 = null;
+        public huzhou_拆批报表 拆批记录变量 = null;
 
         public 拆批()
         {
             InitializeComponent();
         }
-        public 拆批(huzhou_拆批 拆批)
+        public 拆批(huzhou_拆批报表 拆批)
         {
             拆批记录变量 = 拆批;
             InitializeComponent();

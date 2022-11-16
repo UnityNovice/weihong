@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 		
-namespace Microvast.Model
+namespace TestClass
 {
-	public class huzhou_用户管理
+	public class huzhou_工单基础数据
 	{
-		public huzhou_用户管理()
+		public huzhou_工单基础数据()
 		{
 		}
 		
@@ -17,52 +17,67 @@ namespace Microvast.Model
 		///<summary>
 		///
 		///</summary>
-		public string 工号 { get; set; }
+		public string 工单编号 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 账号 { get; set; }
+		public string 工单类型 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 密码 { get; set; }
+		public string 产品型号 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 姓名 { get; set; }
+		public string 订单号 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 性别 { get; set; }
+		public string BOM编号 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 角色 { get; set; }
+		public string 工艺路线编号 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 部门 { get; set; }
+		public string 计划产量 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 岗位 { get; set; }
+		public string 单位 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 工作中心 { get; set; }
+		public string 优先级 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 工厂 { get; set; }
+		public DateTime? 计划开始时间 { get; set; }
+		
+		///<summary>
+		///
+		///</summary>
+		public DateTime? 计划结束时间 { get; set; }
+		
+		///<summary>
+		///
+		///</summary>
+		public string 产线编号 { get; set; }
+		
+		///<summary>
+		///
+		///</summary>
+		public string 超产上限 { get; set; }
 		
 		///<summary>
 		///
@@ -72,32 +87,17 @@ namespace Microvast.Model
 		///<summary>
 		///
 		///</summary>
-		public string 创建时间 { get; set; }
+		public string 用户编号 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 更新时间 { get; set; }
+		public DateTime? 系统时间 { get; set; }
 		
 		///<summary>
 		///
 		///</summary>
-		public string 创建者Id { get; set; }
-		
-		///<summary>
-		///
-		///</summary>
-		public string 创建者名称 { get; set; }
-		
-		///<summary>
-		///
-		///</summary>
-		public string 修改者Id { get; set; }
-		
-		///<summary>
-		///
-		///</summary>
-		public string 修改者名称 { get; set; }
+		public string 备注说明 { get; set; }
 		
 		///<summary>
 		///

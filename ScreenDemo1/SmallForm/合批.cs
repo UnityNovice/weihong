@@ -17,13 +17,13 @@ namespace ScreenDemo1.SmallForm
 {
     public partial class 合批 : UIForm
     {
-        public huzhou_合批 合批记录变量 = null;
+        public huzhou_合批报表 合批记录变量 = null;
 
         public 合批()
         {
             InitializeComponent();
         }
-        public 合批(huzhou_合批 合批)
+        public 合批(huzhou_合批报表 合批)
         {
             InitializeComponent();
             合批记录变量 = 合批;

@@ -258,8 +258,7 @@ namespace ScreenDemo1
             ///
             /// 生产报工，登出信息
             ///
-            通用Service.记录生产报工($"{Store.名称}退出了系统");
-            
+            通用Service.记录生产报工($"{Store.名称}退出了系统", 当前工序);
 
             Thread.Sleep(200);
             //DisConnect_OPC();

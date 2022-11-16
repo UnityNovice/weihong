@@ -4,3 +4,9 @@ E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.Vie
 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.csproj.CoreCompileInputs.cache
 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.dll
 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.pdb
+C:\Users\2200214\Source\Repos\weihong\Microvast.ViewModel\bin\Debug\Microvast.ViewModel.dll
+C:\Users\2200214\Source\Repos\weihong\Microvast.ViewModel\bin\Debug\Microvast.ViewModel.pdb
+C:\Users\2200214\Source\Repos\weihong\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.csproj.AssemblyReference.cache
+C:\Users\2200214\Source\Repos\weihong\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\2200214\Source\Repos\weihong\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.dll
+C:\Users\2200214\Source\Repos\weihong\Microvast.ViewModel\obj\Debug\Microvast.ViewModel.pdb

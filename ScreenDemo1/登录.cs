@@ -118,7 +118,9 @@ namespace Test
                     Store.角色 = 权限管理.角色ID;
                     Store.名称 = 用户.姓名;
                     Store.工号 = 用户.工号;
-                    通用Service.记录生产报工($"{Store.名称}登录了系统");
+                //    通用Service.记录生产报工($"{Store.名称}登录了系统");
+                    通用Service.记录生产报工($"{Store.名称}登录了系统", Setting.IniReadValue("Setting", "当前工序"));
+
                     this.Hide();
                     Form1 frmMain = new Form1();
                     frmMain.当前允许菜单项 = 权限管理.菜单项ID;

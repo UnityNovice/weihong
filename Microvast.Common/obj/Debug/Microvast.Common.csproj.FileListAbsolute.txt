@@ -26,3 +26,15 @@ E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.Common\bin\Debug\Microvast.Common
 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.Common\bin\Debug\MiniExcel.dll
 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.Common\bin\Debug\Newtonsoft.Json.dll
 E:\Git\C#\ScreenDemo1(1)\ScreenDemo1\Microvast.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\bin\Debug\Microvast.Common.dll.config
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\bin\Debug\Microvast.Common.dll
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\bin\Debug\Microvast.Common.pdb
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\bin\Debug\MiniExcel.dll
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\bin\Debug\SqlSugar.dll
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.csproj.AssemblyReference.cache
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.csproj.CoreCompileInputs.cache
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.csproj.CopyComplete
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.dll
+C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.pdb

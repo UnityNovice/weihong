@@ -250,20 +250,20 @@ namespace Test.NewFolder1
         }
         private void 拆批_Click(object sender, EventArgs e)
         {
-            huzhou_拆批 拆批类 = new huzhou_拆批();
+            huzhou_拆批报表 拆批类 = new huzhou_拆批报表();
             拆批类.拆批源批次 = "拆批源批次";
             拆批类.拆批后批次1 = "拆批后批次1";
             拆批类.拆批后批次1重量 = "拆批后批次1重量";
             拆批类.拆批后批次2 = "拆批后批次2";
             拆批类.拆批后批次2重量 = "拆批后批次2重量";
             拆批类.拆批操作者 = "拆批操作者";
-            拆批类.时间 = DateTime.Now.ToString("F");
+            拆批类.时间 = DateTime.Now;
             拆批 拆批 = new 拆批(拆批类);
             拆批.Show();
         }
         private void 合批_Click(object sender, EventArgs e)
         {
-            huzhou_合批 合批类 = new huzhou_合批();
+            huzhou_合批报表 合批类 = new huzhou_合批报表();
             合批类.合批前批次1 = "合批前批次1";
             合批类.合批前批次1重量 = "合批前批次1重量";
             合批类.合批前批次2 = "合批前批次2";
@@ -271,7 +271,7 @@ namespace Test.NewFolder1
             合批类.合批后批次 = "合批后批次";
             合批类.合批后批次重量 = "合批后批次重量";
             合批类.合批操作者 = "合批操作者";
-            合批类.时间 = DateTime.Now.ToString("F");
+            合批类.时间 = DateTime.Now;
             合批 合批 = new 合批(合批类);
             合批.Show();
         }

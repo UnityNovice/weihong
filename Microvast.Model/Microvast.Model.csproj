@@ -48,7 +48,6 @@
     <Compile Include="huzhou_产品数据报表.cs" />
     <Compile Include="huzhou_产线基础数据.cs" />
     <Compile Include="huzhou_单位基础数据.cs" />
-    <Compile Include="huzhou_合批.cs" />
     <Compile Include="huzhou_合批报表.cs" />
     <Compile Include="huzhou_基础物料信息表.cs" />
     <Compile Include="huzhou_工单报表.cs" />
@@ -60,9 +59,7 @@
     <Compile Include="huzhou_异常管理报表.cs" />
     <Compile Include="huzhou_批次管理.cs" />
     <Compile Include="huzhou_投料口基础数据.cs" />
-    <Compile Include="huzhou_报废.cs" />
     <Compile Include="huzhou_报废报表.cs" />
-    <Compile Include="huzhou_拆批.cs" />
     <Compile Include="huzhou_拆批报表.cs" />
     <Compile Include="huzhou_操作日志.cs" />
     <Compile Include="huzhou_料架物料信息.cs" />
@@ -70,7 +67,7 @@
     <Compile Include="huzhou_物料绑定报表.cs" />
     <Compile Include="huzhou_班次基础数据.cs" />
     <Compile Include="huzhou_生产工单.cs" />
-    <Compile Include="huzhou_生产报工.cs" />
+    <Compile Include="huzhou_生产报工报表.cs" />
     <Compile Include="huzhou_用户管理.cs" />
     <Compile Include="huzhou_角色管理.cs" />
     <Compile Include="huzhou_设备台账.cs" />
