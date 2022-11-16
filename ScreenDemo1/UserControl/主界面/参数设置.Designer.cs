@@ -34,6 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.读取 = new Sunny.UI.UIButton();
             this.确认 = new Sunny.UI.UIButton();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PLC_IP
@@ -84,15 +86,15 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(105, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.Size = new System.Drawing.Size(93, 25);
             this.label1.TabIndex = 22;
-            this.label1.Text = "MES地址:";
+            this.label1.Text = "本地地址:";
             // 
             // ProcessNo
             // 
             this.ProcessNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.ProcessNo.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.ProcessNo.Location = new System.Drawing.Point(222, 215);
+            this.ProcessNo.Location = new System.Drawing.Point(222, 280);
             this.ProcessNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProcessNo.MinimumSize = new System.Drawing.Size(1, 16);
             this.ProcessNo.Name = "ProcessNo";
@@ -108,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(69, 215);
+            this.label2.Location = new System.Drawing.Point(69, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 25);
             this.label2.TabIndex = 24;
@@ -181,9 +183,37 @@
             this.确认.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.确认.Click += new System.EventHandler(this.确认_Click);
             // 
+            // uiTextBox1
+            // 
+            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox1.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.uiTextBox1.Location = new System.Drawing.Point(222, 216);
+            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox1.Name = "uiTextBox1";
+            this.uiTextBox1.ShowText = false;
+            this.uiTextBox1.Size = new System.Drawing.Size(236, 26);
+            this.uiTextBox1.TabIndex = 23;
+            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox1.Watermark = "";
+            this.uiTextBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(88, 216);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 25);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "中间表地址:";
+            // 
             // 参数设置
             // 
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.uiTextBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.确认);
             this.Controls.Add(this.读取);
             this.Controls.Add(this.label4);
@@ -210,5 +240,7 @@
         private System.Windows.Forms.Label label4;
         private Sunny.UI.UIButton 读取;
         private Sunny.UI.UIButton 确认;
+        private Sunny.UI.UITextBox uiTextBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
