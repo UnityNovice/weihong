@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Microvast.Common.Utils
 {
     /// <summary>
@@ -21,7 +20,6 @@ namespace Microvast.Common.Utils
         {
             return ConfigurationManager.AppSettings[name];
         }
-
         /// <summary>
         /// 获取连接字符串
         /// </summary>
@@ -31,7 +29,6 @@ namespace Microvast.Common.Utils
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
-
         /// <summary>
         /// 设置Appsetting中的值
         /// </summary>
@@ -51,11 +48,9 @@ namespace Microvast.Common.Utils
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
-
         /// <summary>
         /// 设置ConnectString中的值
         /// </summary>
@@ -75,10 +70,8 @@ namespace Microvast.Common.Utils
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
     }
-
 }

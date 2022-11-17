@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Test
 {
     public class SqlSugarHelper
     {
         public SqlSugarClient db;
         private static readonly string _connectionstring = "Database=Sqlserver20221010;Data Source=ZZH-BJB;User Id=sa;Password=Zzh330501;";
-
         //   private static readonly string _connectionstring = AppConfigHelper.GetConnectionString("mysql");
         public SqlSugarHelper()
         {

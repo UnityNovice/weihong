@@ -78,7 +78,6 @@
             this.TitleForeColor = System.Drawing.Color.Black;
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 800, 450);
             this.ResumeLayout(false);
-
         }
         #endregion
         private Sunny.UI.UIRichTextBox uiRichTextBox1;

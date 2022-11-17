@@ -228,7 +228,6 @@
             this.Load += new System.EventHandler(this.参数设置_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
         private Sunny.UI.UITextBox PLC_IP;

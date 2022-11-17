@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Microvast.Common.Utils
 {
     public class ExcelHelper
@@ -21,7 +20,6 @@ namespace Microvast.Common.Utils
             {
                 isInsertOrCreate = "insert";
             }
-
             if (isInsertOrCreate == "create")
             {
                 MiniExcel.SaveAs(path, values);
@@ -34,14 +32,12 @@ namespace Microvast.Common.Utils
                 MiniExcel.SaveAs(path, beforeVal);
             }
         }
-
         public static void SaveExcel(DataTable dt)
         {
             string fileName = DateTime.Now.ToString("yyyyMMdd");
             var path = Path.Combine(Environment.CurrentDirectory, $@"\{fileName}.xlsx");
             MiniExcel.SaveAs(path, dt);
         }
-
         public static void SaveExcel(List<Dictionary<string, object>> dic)
         {
             CheckDirectory();
@@ -54,7 +50,6 @@ namespace Microvast.Common.Utils
             {
                 isInsertOrCreate = "insert";
             }
-
             if (isInsertOrCreate == "create")
             {
                 MiniExcel.SaveAs(path, dic);
@@ -63,7 +58,6 @@ namespace Microvast.Common.Utils
             {
                 var beforeVal = MiniExcel.Query(path, useHeaderRow: true).ToList();
                 //beforeVal.RemoveAt(0);
-
                 var hehe = JsonConvert.SerializeObject(beforeVal);
                 var xixi = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(hehe);
                 xixi.AddRange(dic);
@@ -73,7 +67,6 @@ namespace Microvast.Common.Utils
             }
             File.Copy(path, copyPath, true);
         }
-
         public static void CheckDirectory()
         {
             var dontMoveDirectory = Path.Combine(Environment.CurrentDirectory, $@"\不要动这个文件夹");
@@ -87,7 +80,6 @@ namespace Microvast.Common.Utils
                 Directory.CreateDirectory(copyToDirectory);
             }
         }
-
         public static void CheckCreateDirectory(string path)
         {
             var copyToDirectory = Path.Combine(Environment.CurrentDirectory, $@"\中间表记录目录\{path}");

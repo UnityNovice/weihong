@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using SqlSugar;
-
 namespace Microvast.Model
 {
 	public class huzhou_报废报表
@@ -10,7 +9,6 @@ namespace Microvast.Model
 		{
 		}
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
-
         ///<summary>
         ///
         ///</summary>

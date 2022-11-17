@@ -28,7 +28,6 @@ namespace ScreenDemo1
                     Application.ThreadException += Application_ThreadException;
                     //非UI线程的未处理异常捕获
                     AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.Run(new 登录());
@@ -45,7 +44,6 @@ namespace ScreenDemo1
                 MessageBox.Show("程序已启动，请勿重复启动");
             }
         }
-
         /// <summary>
         /// UI线程未捕获异常处理函数
         /// </summary>
@@ -62,7 +60,6 @@ namespace ScreenDemo1
                 错误提示.ShowDialog();
             }
         }
-
         /// <summary>
         /// 非UI线程未捕获异常处理函数
         /// </summary>
@@ -86,7 +83,6 @@ namespace ScreenDemo1
             {
                 错误提示 错误提示 = new 错误提示(ex.ToString());
                 错误提示.ShowDialog();
-
             }
         }
     }

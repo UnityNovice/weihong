@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Microvast.Service
 {
     public static class 搅拌Service
@@ -31,7 +30,6 @@ namespace Microvast.Service
             }
             return workOrders;
         }
-
         public static List<WorkOrder> 负极加载工单()
         {
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
@@ -52,8 +50,5 @@ namespace Microvast.Service
             return workOrders;
         }
         #endregion
-
-
     }
-
 }

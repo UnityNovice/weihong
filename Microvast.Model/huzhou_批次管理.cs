@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Microvast.Model
 {
     public class huzhou_批次管理
@@ -25,5 +24,4 @@ namespace Microvast.Model
         public string 系统时间 { get; set; }
         public string 备注说明 { get; set; }
     }
-
 }

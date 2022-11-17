@@ -28,7 +28,7 @@ namespace Microvast.Service
         public static List<WorkOrder> 加载工单(string aa)
         {
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
-            var 生产工单s = sqlSugarServerHelper.db.Queryable<huzhou_生产工单>().Where(a => a.工序.Contains(aa)).ToList();
+            var 生产工单s = sqlSugarServerHelper.db.Queryable<huzhou_生产工单>().Where(a => a.工序.Contains(aa)).Where(a=> a.状态=="未生产"|| a.状态 == "暂停中"|| a.状态 == "生产中").ToList();
             List<WorkOrder> workOrders = new List<WorkOrder>();
             for (int i = 0; i < 生产工单s.Count; i++)
             {

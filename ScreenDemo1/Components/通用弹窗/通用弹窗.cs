@@ -14,7 +14,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Test;
-
 namespace ScreenDemo1.Components.通用弹窗
 {
     public partial class 通用弹窗 : UIForm
@@ -189,7 +188,6 @@ namespace ScreenDemo1.Components.通用弹窗
                         }
                         if (data["DataName"].ToString() == "工序")
                         {
-
                             ComboBoxtext_val.Text  = Setting.IniReadValue("Setting", "当前工序");
                         }
                     }
@@ -415,7 +413,6 @@ namespace ScreenDemo1.Components.通用弹窗
                         }
                         if (data["DataName"].ToString() == "工序")
                         {
-
                             ComboBoxtext_val.Text = Setting.IniReadValue("Setting", "当前工序");
                         }
                     }
@@ -519,7 +516,6 @@ namespace ScreenDemo1.Components.通用弹窗
                     }
                 }
             
-
             }
             #endregion
         }

@@ -31,7 +31,6 @@ namespace ScreenDemo1.SmallForm
             }
         }
         #endregion
-
         private void 保存_Click(object sender, EventArgs e)
         {
             this.Close();

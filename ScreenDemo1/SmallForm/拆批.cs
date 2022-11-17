@@ -18,7 +18,6 @@ namespace ScreenDemo1.SmallForm
     public partial class 拆批 : UIForm
     {
         public huzhou_拆批报表 拆批记录变量 = null;
-
         public 拆批()
         {
             InitializeComponent();
@@ -40,7 +39,6 @@ namespace ScreenDemo1.SmallForm
             }
         }
         #endregion
-
         private void 确认_Click(object sender, EventArgs e)
         {
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();

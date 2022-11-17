@@ -193,7 +193,6 @@ namespace ScreenDemo1
         }
         private void uiNavMenu1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-
             switch (e.Node.Text.ToString().Replace("▼", ""))
             {
                 case "正极搅拌": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(搅拌正极主界面); break;
@@ -234,7 +233,6 @@ namespace ScreenDemo1
                 case "基础物料信息表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("基础物料信息表", "", "")); break;
                 case "料架物料信息": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("料架物料信息", "", "")); break;
                 case "参数设置": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(参数设置); break;
-
                 default:; break;
             }
             //MessageBox.Show(e.Node.Text);
@@ -263,7 +261,6 @@ namespace ScreenDemo1
             /// 生产报工，登出信息
             ///
             通用Service.记录生产报工($"{Store.名称}退出了系统", 当前工序);
-
             Thread.Sleep(200);
             //DisConnect_OPC();
             System.Environment.Exit(0);

@@ -724,7 +724,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-
         }
         #endregion
         private System.Windows.Forms.Label label4;

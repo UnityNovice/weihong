@@ -26,9 +26,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(涂布正极主界面));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.WorkOrderPanel = new System.Windows.Forms.Panel();
@@ -94,6 +94,7 @@
             this.运行记录label = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.uiButton1 = new Sunny.UI.UIButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -118,7 +119,6 @@
             this.需求物料材料名称label = new System.Windows.Forms.Label();
             this.当前物料二维码txt = new Sunny.UI.UITextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.uiButton1 = new Sunny.UI.UIButton();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -180,15 +180,14 @@
             this.当前选择工单.AutoSize = true;
             this.当前选择工单.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.当前选择工单.ForeColor = System.Drawing.Color.Black;
-            this.当前选择工单.Location = new System.Drawing.Point(131, 39);
+            this.当前选择工单.Location = new System.Drawing.Point(142, 39);
             this.当前选择工单.Name = "当前选择工单";
-            this.当前选择工单.Size = new System.Drawing.Size(100, 26);
+            this.当前选择工单.Size = new System.Drawing.Size(0, 26);
             this.当前选择工单.TabIndex = 17;
-            this.当前选择工单.Text = "  未选择！";
             // 
             // 读取工单
             // 
-            this.读取工单.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色更新;
+            this.读取工单.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("读取工单.BackgroundImage")));
             this.读取工单.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.读取工单.Cursor = System.Windows.Forms.Cursors.Hand;
             this.读取工单.FillColor = System.Drawing.Color.Transparent;
@@ -217,7 +216,7 @@
             // 
             // 工单确认
             // 
-            this.工单确认.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色确认;
+            this.工单确认.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("工单确认.BackgroundImage")));
             this.工单确认.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.工单确认.Cursor = System.Windows.Forms.Cursors.Hand;
             this.工单确认.FillColor = System.Drawing.Color.Transparent;
@@ -246,7 +245,7 @@
             // 
             // 工单暂停
             // 
-            this.工单暂停.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色暂停;
+            this.工单暂停.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("工单暂停.BackgroundImage")));
             this.工单暂停.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.工单暂停.Cursor = System.Windows.Forms.Cursors.Hand;
             this.工单暂停.FillColor = System.Drawing.Color.Transparent;
@@ -275,7 +274,7 @@
             // 
             // 订单结束
             // 
-            this.订单结束.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色结束;
+            this.订单结束.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("订单结束.BackgroundImage")));
             this.订单结束.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.订单结束.Cursor = System.Windows.Forms.Cursors.Hand;
             this.订单结束.FillColor = System.Drawing.Color.Transparent;
@@ -757,14 +756,14 @@
             this.dgvDoInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDoInfo.ColumnHeadersHeight = 8;
             this.dgvDoInfo.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDoInfo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDoInfo.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDoInfo.Location = new System.Drawing.Point(0, 11);
             this.dgvDoInfo.MultiSelect = false;
             this.dgvDoInfo.Name = "dgvDoInfo";
@@ -787,24 +786,24 @@
             this.dgvExInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvExInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvExInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExInfo.ColumnHeadersHeight = 8;
             this.dgvExInfo.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExInfo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExInfo.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvExInfo.Location = new System.Drawing.Point(1, 8);
             this.dgvExInfo.MultiSelect = false;
             this.dgvExInfo.Name = "dgvExInfo";
@@ -991,7 +990,7 @@
             // 
             // 运行记录
             // 
-            this.运行记录.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色运行记录;
+            this.运行记录.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("运行记录.BackgroundImage")));
             this.运行记录.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.运行记录.Cursor = System.Windows.Forms.Cursors.Hand;
             this.运行记录.FillColor = System.Drawing.Color.Transparent;
@@ -1020,7 +1019,7 @@
             // 
             // 报废
             // 
-            this.报废.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色报废;
+            this.报废.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("报废.BackgroundImage")));
             this.报废.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.报废.Cursor = System.Windows.Forms.Cursors.Hand;
             this.报废.FillColor = System.Drawing.Color.Transparent;
@@ -1049,7 +1048,7 @@
             // 
             // 合批
             // 
-            this.合批.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色合批;
+            this.合批.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("合批.BackgroundImage")));
             this.合批.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.合批.Cursor = System.Windows.Forms.Cursors.Hand;
             this.合批.FillColor = System.Drawing.Color.Transparent;
@@ -1078,7 +1077,7 @@
             // 
             // 拆批
             // 
-            this.拆批.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色拆批;
+            this.拆批.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("拆批.BackgroundImage")));
             this.拆批.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.拆批.Cursor = System.Windows.Forms.Cursors.Hand;
             this.拆批.FillColor = System.Drawing.Color.Transparent;
@@ -1193,6 +1192,35 @@
             this.groupBox8.Text = "扫描物料";
             this.groupBox8.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBox);
             // 
+            // uiButton1
+            // 
+            this.uiButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.FillColor = System.Drawing.Color.Transparent;
+            this.uiButton1.FillColor2 = System.Drawing.Color.Transparent;
+            this.uiButton1.FillHoverColor = System.Drawing.Color.DodgerBlue;
+            this.uiButton1.FillPressColor = System.Drawing.Color.LightGray;
+            this.uiButton1.FillSelectedColor = System.Drawing.Color.Transparent;
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.uiButton1.ForeColor = System.Drawing.Color.Black;
+            this.uiButton1.ForeDisableColor = System.Drawing.Color.DarkGray;
+            this.uiButton1.ForePressColor = System.Drawing.Color.DarkGray;
+            this.uiButton1.Location = new System.Drawing.Point(18, 274);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.RectColor = System.Drawing.Color.Black;
+            this.uiButton1.RectHoverColor = System.Drawing.Color.DarkGray;
+            this.uiButton1.RectPressColor = System.Drawing.Color.Gainsboro;
+            this.uiButton1.RectSelectedColor = System.Drawing.Color.Gainsboro;
+            this.uiButton1.RectSize = 2;
+            this.uiButton1.Size = new System.Drawing.Size(95, 43);
+            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiButton1.TabIndex = 79;
+            this.uiButton1.Text = "模拟扫描";
+            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -1272,7 +1300,7 @@
             // 
             // 上料
             // 
-            this.上料.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色上料;
+            this.上料.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("上料.BackgroundImage")));
             this.上料.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.上料.Cursor = System.Windows.Forms.Cursors.Hand;
             this.上料.FillColor = System.Drawing.Color.Transparent;
@@ -1325,7 +1353,7 @@
             // 
             // AGV叫料
             // 
-            this.AGV叫料.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色叫料;
+            this.AGV叫料.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AGV叫料.BackgroundImage")));
             this.AGV叫料.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.AGV叫料.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AGV叫料.FillColor = System.Drawing.Color.Transparent;
@@ -1513,35 +1541,6 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "扫描物料:";
             // 
-            // uiButton1
-            // 
-            this.uiButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.FillColor = System.Drawing.Color.Transparent;
-            this.uiButton1.FillColor2 = System.Drawing.Color.Transparent;
-            this.uiButton1.FillHoverColor = System.Drawing.Color.DodgerBlue;
-            this.uiButton1.FillPressColor = System.Drawing.Color.LightGray;
-            this.uiButton1.FillSelectedColor = System.Drawing.Color.Transparent;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.uiButton1.ForeColor = System.Drawing.Color.Black;
-            this.uiButton1.ForeDisableColor = System.Drawing.Color.DarkGray;
-            this.uiButton1.ForePressColor = System.Drawing.Color.DarkGray;
-            this.uiButton1.Location = new System.Drawing.Point(18, 274);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.RectColor = System.Drawing.Color.Black;
-            this.uiButton1.RectHoverColor = System.Drawing.Color.DarkGray;
-            this.uiButton1.RectPressColor = System.Drawing.Color.Gainsboro;
-            this.uiButton1.RectSelectedColor = System.Drawing.Color.Gainsboro;
-            this.uiButton1.RectSize = 2;
-            this.uiButton1.Size = new System.Drawing.Size(95, 43);
-            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton1.TabIndex = 79;
-            this.uiButton1.Text = "模拟扫描";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
-            // 
             // 涂布正极主界面
             // 
             this.BackColor = System.Drawing.Color.Transparent;
@@ -1584,7 +1583,6 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
-
         }
         #endregion
         private System.Windows.Forms.Label label4;

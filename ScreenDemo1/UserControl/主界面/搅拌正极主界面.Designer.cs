@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.uiButton2 = new Sunny.UI.UIButton();
             this.当前物料二维码txt = new Sunny.UI.UITextBox();
             this.投料口4 = new Sunny.UI.UIButton();
             this.投料口3 = new Sunny.UI.UIButton();
@@ -104,7 +105,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.uiButton2 = new Sunny.UI.UIButton();
             this.groupBox4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -151,6 +151,34 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "投料信息";
             this.groupBox4.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBox);
+            // 
+            // uiButton2
+            // 
+            this.uiButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton2.FillColor = System.Drawing.Color.Transparent;
+            this.uiButton2.FillColor2 = System.Drawing.Color.Transparent;
+            this.uiButton2.FillHoverColor = System.Drawing.Color.DodgerBlue;
+            this.uiButton2.FillPressColor = System.Drawing.Color.LightGray;
+            this.uiButton2.FillSelectedColor = System.Drawing.Color.Transparent;
+            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton2.ForeColor = System.Drawing.Color.Black;
+            this.uiButton2.ForeDisableColor = System.Drawing.Color.DarkGray;
+            this.uiButton2.ForePressColor = System.Drawing.Color.DarkGray;
+            this.uiButton2.Location = new System.Drawing.Point(526, 25);
+            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton2.Name = "uiButton2";
+            this.uiButton2.RectColor = System.Drawing.Color.DarkGray;
+            this.uiButton2.RectHoverColor = System.Drawing.Color.DarkGray;
+            this.uiButton2.RectPressColor = System.Drawing.Color.Gainsboro;
+            this.uiButton2.RectSelectedColor = System.Drawing.Color.Gainsboro;
+            this.uiButton2.Size = new System.Drawing.Size(78, 35);
+            this.uiButton2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiButton2.TabIndex = 96;
+            this.uiButton2.Text = "扫描模拟";
+            this.uiButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton2.Click += new System.EventHandler(this.uiButton2_Click);
             // 
             // 当前物料二维码txt
             // 
@@ -413,7 +441,7 @@
             // 
             // 投入
             // 
-            this.投入.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色上料;
+            this.投入.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("投入.BackgroundImage")));
             this.投入.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.投入.Cursor = System.Windows.Forms.Cursors.Hand;
             this.投入.FillColor = System.Drawing.Color.Transparent;
@@ -465,7 +493,7 @@
             // 
             // uiButton1
             // 
-            this.uiButton1.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色叫料;
+            this.uiButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uiButton1.BackgroundImage")));
             this.uiButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton1.FillColor = System.Drawing.Color.Transparent;
@@ -679,11 +707,10 @@
             this.当前选择工单.AutoSize = true;
             this.当前选择工单.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold);
             this.当前选择工单.ForeColor = System.Drawing.Color.Black;
-            this.当前选择工单.Location = new System.Drawing.Point(125, 37);
+            this.当前选择工单.Location = new System.Drawing.Point(144, 37);
             this.当前选择工单.Name = "当前选择工单";
-            this.当前选择工单.Size = new System.Drawing.Size(100, 26);
+            this.当前选择工单.Size = new System.Drawing.Size(0, 26);
             this.当前选择工单.TabIndex = 17;
-            this.当前选择工单.Text = "  未选择！";
             // 
             // 读取工单
             // 
@@ -743,7 +770,7 @@
             // 
             // 工单暂停
             // 
-            this.工单暂停.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色暂停;
+            this.工单暂停.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("工单暂停.BackgroundImage")));
             this.工单暂停.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.工单暂停.Cursor = System.Windows.Forms.Cursors.Hand;
             this.工单暂停.FillColor = System.Drawing.Color.Transparent;
@@ -771,7 +798,7 @@
             // 
             // 订单结束
             // 
-            this.订单结束.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色结束;
+            this.订单结束.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("订单结束.BackgroundImage")));
             this.订单结束.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.订单结束.Cursor = System.Windows.Forms.Cursors.Hand;
             this.订单结束.FillColor = System.Drawing.Color.Transparent;
@@ -839,7 +866,7 @@
             // 
             // 读取批次号
             // 
-            this.读取批次号.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色更新;
+            this.读取批次号.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("读取批次号.BackgroundImage")));
             this.读取批次号.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.读取批次号.Cursor = System.Windows.Forms.Cursors.Hand;
             this.读取批次号.FillColor = System.Drawing.Color.Transparent;
@@ -876,7 +903,7 @@
             // 
             // 批次号确认
             // 
-            this.批次号确认.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色确认;
+            this.批次号确认.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("批次号确认.BackgroundImage")));
             this.批次号确认.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.批次号确认.Cursor = System.Windows.Forms.Cursors.Hand;
             this.批次号确认.FillColor = System.Drawing.Color.Transparent;
@@ -1098,7 +1125,7 @@
             // 
             // 运行记录
             // 
-            this.运行记录.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色运行记录;
+            this.运行记录.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("运行记录.BackgroundImage")));
             this.运行记录.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.运行记录.Cursor = System.Windows.Forms.Cursors.Hand;
             this.运行记录.FillColor = System.Drawing.Color.Transparent;
@@ -1125,7 +1152,7 @@
             // 
             // 报废
             // 
-            this.报废.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色报废;
+            this.报废.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("报废.BackgroundImage")));
             this.报废.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.报废.Cursor = System.Windows.Forms.Cursors.Hand;
             this.报废.FillColor = System.Drawing.Color.Transparent;
@@ -1152,7 +1179,7 @@
             // 
             // 合批
             // 
-            this.合批.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色合批;
+            this.合批.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("合批.BackgroundImage")));
             this.合批.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.合批.Cursor = System.Windows.Forms.Cursors.Hand;
             this.合批.FillColor = System.Drawing.Color.Transparent;
@@ -1179,7 +1206,7 @@
             // 
             // 拆批
             // 
-            this.拆批.BackgroundImage = global::ScreenDemo1.Properties.Resources.黑色拆批;
+            this.拆批.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("拆批.BackgroundImage")));
             this.拆批.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.拆批.Cursor = System.Windows.Forms.Cursors.Hand;
             this.拆批.FillColor = System.Drawing.Color.Transparent;
@@ -1358,34 +1385,6 @@
             this.label15.TabIndex = 2;
             this.label15.Text = "设备:";
             // 
-            // uiButton2
-            // 
-            this.uiButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.FillColor = System.Drawing.Color.Transparent;
-            this.uiButton2.FillColor2 = System.Drawing.Color.Transparent;
-            this.uiButton2.FillHoverColor = System.Drawing.Color.DodgerBlue;
-            this.uiButton2.FillPressColor = System.Drawing.Color.LightGray;
-            this.uiButton2.FillSelectedColor = System.Drawing.Color.Transparent;
-            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.ForeColor = System.Drawing.Color.Black;
-            this.uiButton2.ForeDisableColor = System.Drawing.Color.DarkGray;
-            this.uiButton2.ForePressColor = System.Drawing.Color.DarkGray;
-            this.uiButton2.Location = new System.Drawing.Point(526, 25);
-            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton2.Name = "uiButton2";
-            this.uiButton2.RectColor = System.Drawing.Color.DarkGray;
-            this.uiButton2.RectHoverColor = System.Drawing.Color.DarkGray;
-            this.uiButton2.RectPressColor = System.Drawing.Color.Gainsboro;
-            this.uiButton2.RectSelectedColor = System.Drawing.Color.Gainsboro;
-            this.uiButton2.Size = new System.Drawing.Size(78, 35);
-            this.uiButton2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton2.TabIndex = 96;
-            this.uiButton2.Text = "扫描模拟";
-            this.uiButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiButton2.Click += new System.EventHandler(this.uiButton2_Click);
-            // 
             // 搅拌正极主界面
             // 
             this.BackColor = System.Drawing.Color.Transparent;
@@ -1423,7 +1422,6 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
-
         }
         #endregion
         private System.Windows.Forms.Label label4;

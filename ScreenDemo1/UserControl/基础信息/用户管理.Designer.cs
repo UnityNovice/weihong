@@ -401,7 +401,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
         private System.Windows.Forms.Label label4;

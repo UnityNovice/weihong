@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Test
 {
     public class 基础物料信息表
@@ -23,5 +22,4 @@ namespace Test
         public string 投料口B { get; set; }
         public string 投料口C { get; set; }
     }
-
 }

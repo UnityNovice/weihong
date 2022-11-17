@@ -16,7 +16,6 @@ using Microvast.Model;
 using Sunny.UI;
 using Microvast.Common.Vuex;
 using Microvast.Service;
-
 namespace Test
 {
     public partial class 登录 : UIForm
@@ -38,20 +37,17 @@ namespace Test
         IniReadWrite Setting = new IniReadWrite();
         public static 登录 login;
         public string LoginUserName = "";
-
         private Thread tp5 = null;
         private void 登录_Load(object sender, EventArgs e)
         {
             Setting.inipath = System.Windows.Forms.Application.StartupPath + "\\config.ini";
             Setting.ExistINIFile();
-
         }
         private void 登录按钮_Click(object sender, EventArgs e)
         {
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
             #region 旧
             ////var 用户=sqlSugarServerHelper.db.Queryable<huzhou_用户管理>().First(a => txtUser.Text == a.账号 && txtPassword.Text == a.密码);
-
             ////var 用户角色ID = sqlSugarServerHelper.db.Queryable<huzhou_权限管理>().First(a =>a.角色ID== 用户.角色).角色ID;
             ////string 用户角色 = "";
             ////if (string.IsNullOrEmpty(用户角色ID))
@@ -103,7 +99,6 @@ namespace Test
             ////    MessageBox.Show("密码错误！");
             ////} 
             #endregion
-
             var 用户 = sqlSugarServerHelper.db.Queryable<huzhou_用户管理>().First(a => txtUser.Text == a.工号 && txtPassword.Text == a.密码 && a.状态 == "启用");
             if (用户 != null)
             {
@@ -120,7 +115,6 @@ namespace Test
                     Store.工号 = 用户.工号;
                 //    通用Service.记录生产报工($"{Store.名称}登录了系统");
                     通用Service.记录生产报工($"{Store.名称}登录了系统", Setting.IniReadValue("Setting", "当前工序"));
-
                     this.Hide();
                     Form1 frmMain = new Form1();
                     frmMain.当前允许菜单项 = 权限管理.菜单项ID;
@@ -137,7 +131,6 @@ namespace Test
                     ///
                     // sqlSugarServerHelper.db.
                     frmMain.Show();
-
                 }
                 else
                 {
@@ -159,7 +152,5 @@ namespace Test
             e.Cancel = true;
             MessageBox.Show("请通过取消按钮关闭界面");
         }
-
-
     }
 }

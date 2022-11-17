@@ -30,7 +30,6 @@ namespace ScreenDemo1.SmallForm
             }
         }
         #endregion
-
         private void 确认_Click(object sender, EventArgs e)
         {
             List<string> list = new List<string>();

@@ -131,10 +131,8 @@
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 791, 424);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
-
         private System.Windows.Forms.Label label57;
         private Sunny.UI.UITextBox 拆批后该批重量;
         private System.Windows.Forms.Label label59;

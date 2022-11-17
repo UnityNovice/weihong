@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using SqlSugar;
-
 namespace Microvast.Model
 {
 	public class huzhou_拆批报表

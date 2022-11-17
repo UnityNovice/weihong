@@ -24,7 +24,7 @@ using SqlSugar.DistributedSystem.Snowflake;
 using Microvast.Service;
 using Microvast.ViewModel;
 using Microvast.Model;
-
+using Microvast.Common.Utils;
 namespace Test.NewFolder1
 {
     public partial class 搅拌负极主界面 : UserControl
@@ -94,10 +94,26 @@ namespace Test.NewFolder1
         #region 控件事件
         private void 订单结束_Click(object sender, EventArgs e)
         {
+            if (当前选择工单.Text == "")
+            {
+                MessageBox.Show("当前无工单！");
+                return;
+            }
             DialogResult dr = MessageBox.Show("请确认是否结束工单？", "工单", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("工单结束");
+                SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
+                string sql = $"Update  huzhou_生产工单 SET " + " [状态] = " + "'已完成'" + " WHERE [工单编号]= '" + ChooseWorkOrder + "' AND " + "[工序]='" + 当前配置工序 + "'";
+                int res = sqlSugarServerHelper.db.Ado.ExecuteCommand(sql.ToString());
+                if (res != 0)
+                {
+                    MessageBox.Show("已完成该工单！");
+                    加载工单();
+                }
+                else
+                {
+                    MessageBox.Show("工单结束错误！");
+                }
             }
             else
             {
@@ -151,7 +167,6 @@ namespace Test.NewFolder1
             Setting.ExistINIFile();
             当前配置工序 = Setting.IniReadValue("Setting", "当前工序");
         }
-
         private void labelResult_Click(object sender, EventArgs e)
         {
             updateLogs("M校验成功：批次号" + Guid.NewGuid().ToString("N").Substring(0, 20) + "\r\n");
@@ -162,24 +177,16 @@ namespace Test.NewFolder1
         }
         private void 读取工单_Click(object sender, EventArgs e)
         {
-            //List<WorkOrder> workOrders = new List<WorkOrder>();
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    WorkOrder workOrder = new WorkOrder();
-            //    workOrder.workordernum = "MV32022092900" + i.ToString();
-            //    workOrder.Status = "未生产";
-            //    workOrder.Priority = "一般";
-            //    if (i == 3)
-            //    {
-            //        workOrder.Priority = "紧急";
-            //    }
-            //    workOrders.Add(workOrder);
-            //}
-            //AddWorkOrderPanel(workOrders);
             加载工单();
         }
         private void 工单确认_Click(object sender, EventArgs e)
         {
+            if(当前选择工单.Text!="")
+            {
+                MessageBox.Show("当前已有工单！");
+                return;
+            }
+            SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
             if (ChooseWorkOrder == "")
             {
                 MessageBox.Show("未选择工单！");
@@ -190,17 +197,27 @@ namespace Test.NewFolder1
             {
                 Setting.IniWriteValue("Setting", "搅拌正极工单", ChooseWorkOrder);
                 当前选择工单.Text = ChooseWorkOrder;
-                MessageBox.Show("工单已选择");
-                List<SlurrybatchNumber> list = new List<SlurrybatchNumber>();
-                for (int a = 0; a < 4; a++)
+                string   sql = $"Update  huzhou_生产工单 SET " + " [状态] = "+"'生产中'"+" WHERE [工单编号]= '"+ ChooseWorkOrder + "' AND "+"[工序]='"+当前配置工序+"'";
+                int res = sqlSugarServerHelper.db.Ado.ExecuteCommand(sql.ToString());
+                if(res !=0)
                 {
-                    SlurrybatchNumber slurrybatchNumberpanel = new SlurrybatchNumber();
-                    slurrybatchNumberpanel.Status = "未使用";
-                    slurrybatchNumberpanel.slurrybatchnumber = "MV9sdsdwa00" + a.ToString();
-                    if (a == 3) slurrybatchNumberpanel.Status = "已使用";
-                    list.Add(slurrybatchNumberpanel);
+                    MessageBox.Show("已启动工单！");
+                    加载工单();
                 }
-                AddSlurrybatchNumber(list);
+                else
+                {
+                    MessageBox.Show("工单启动错误！");
+                }
+                //List<SlurrybatchNumber> list = new List<SlurrybatchNumber>();
+                //for (int a = 0; a < 4; a++)
+                //{
+                //    SlurrybatchNumber slurrybatchNumberpanel = new SlurrybatchNumber();
+                //    slurrybatchNumberpanel.Status = "未使用";
+                //    slurrybatchNumberpanel.slurrybatchnumber = "MV9sdsdwa00" + a.ToString();
+                //    if (a == 3) slurrybatchNumberpanel.Status = "已使用";
+                //    list.Add(slurrybatchNumberpanel);
+                //}
+                //AddSlurrybatchNumber(list);
             }
             else
             {
@@ -209,10 +226,26 @@ namespace Test.NewFolder1
         }
         private void 工单暂停_Click(object sender, EventArgs e)
         {
+            if (当前选择工单.Text == "")
+            {
+                MessageBox.Show("当前无工单！");
+                return;
+            }
             DialogResult dr = MessageBox.Show("请确认是否暂停工单？", "工单暂停", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("工单已暂停");
+                SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
+                string sql = $"Update  huzhou_生产工单 SET " + " [状态] = " + "'暂停中'" + " WHERE [工单编号]= '" + ChooseWorkOrder + "' AND " + "[工序]='" + 当前配置工序 + "'";
+                int res = sqlSugarServerHelper.db.Ado.ExecuteCommand(sql.ToString());
+                if (res != 0)
+                {
+                    MessageBox.Show("已暂停该工单！");
+                    加载工单();
+                }
+                else
+                {
+                    MessageBox.Show("工单暂停错误！");
+                }
             }
             else
             {
@@ -464,7 +497,7 @@ namespace Test.NewFolder1
                 radioButton.Name = workOrders[i].workordernum;
                 radioButton.Text = workOrders[i].workordernum;
                 radioButton.AutoSize = true;
-                radioButton.Font = new System.Drawing.Font("微软雅黑", 12F);
+                radioButton.Font = new System.Drawing.Font("微软雅黑", 14F);
                 radioButton.Location = new System.Drawing.Point(23, 42 + i * 37);
                 radioButton.Size = new System.Drawing.Size(220, 31);
                 radioButton.TabIndex = 0;
@@ -474,7 +507,7 @@ namespace Test.NewFolder1
                 if (i == 0) radioButton.Checked = true;
                 Label label = new Label();
                 label.AutoSize = true;
-                label.Font = new System.Drawing.Font("微软雅黑", 12F);
+                label.Font = new System.Drawing.Font("微软雅黑", 14F);
                 label.ForeColor = Color.Black;
                 label.Location = new System.Drawing.Point(571, 44 + i * 37);
                 label.Name = workOrders[i].Priority;
@@ -483,7 +516,7 @@ namespace Test.NewFolder1
                 label.Text = workOrders[i].Priority;
                 Label label2 = new Label();
                 label2.AutoSize = true;
-                label2.Font = new System.Drawing.Font("微软雅黑", 12F);
+                label2.Font = new System.Drawing.Font("微软雅黑", 14F);
                 label2.ForeColor = Color.Black;
                 label2.Location = new System.Drawing.Point(688, 44 + i * 37);
                 label2.Name = workOrders[i].Status;
@@ -581,7 +614,6 @@ namespace Test.NewFolder1
                 this.logtype = type;
             }
         }
-
         #region 方法
         public void 加载工单()
         {
@@ -589,7 +621,6 @@ namespace Test.NewFolder1
             AddWorkOrderPanel(workOrders);
         }
         #endregion
-
         private void uiButton2_Click(object sender, EventArgs e)
         {
             string scanStr = 当前物料二维码txt.Text;

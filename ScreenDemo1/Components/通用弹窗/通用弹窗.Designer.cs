@@ -68,7 +68,6 @@
             this.TitleColor = System.Drawing.Color.Gray;
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 800, 450);
             this.ResumeLayout(false);
-
         }
         #endregion
         private Sunny.UI.UIButton SaveBtn;

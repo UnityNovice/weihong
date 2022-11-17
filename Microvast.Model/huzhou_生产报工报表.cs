@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Security.Principal;
-
 namespace Microvast.Model
 {
 	public class huzhou_生产报工报表
