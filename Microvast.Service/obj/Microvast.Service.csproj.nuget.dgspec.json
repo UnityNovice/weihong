@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\Microvast.Service.csproj": {}
+    "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Service\\Microvast.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Common\\Microvast.Common.csproj": {
+    "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Common\\Microvast.Common.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Common\\Microvast.Common.csproj",
+        "projectUniqueName": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Common\\Microvast.Common.csproj",
         "projectName": "Microvast.Common",
-        "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Common\\Microvast.Common.csproj",
+        "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Common\\Microvast.Common.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -19,11 +19,11 @@
         "net472": {}
       }
     },
-    "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Model\\Microvast.Model.csproj": {
+    "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Model\\Microvast.Model.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Model\\Microvast.Model.csproj",
+        "projectUniqueName": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Model\\Microvast.Model.csproj",
         "projectName": "Microvast.Model",
-        "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Model\\Microvast.Model.csproj",
+        "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Model\\Microvast.Model.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -34,14 +34,14 @@
         "net472": {}
       }
     },
-    "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\Microvast.Service.csproj": {
+    "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Service\\Microvast.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
+        "projectUniqueName": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
         "projectName": "Microvast.Service",
-        "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
+        "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
         "packagesPath": "C:\\Users\\2200214\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\obj\\",
+        "outputPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "D:\\Documents and Settings\\2200214\\Application Data\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
           "net48": {
             "targetAlias": "net48",
             "projectReferences": {
-              "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Common\\Microvast.Common.csproj": {
-                "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Common\\Microvast.Common.csproj"
+              "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Common\\Microvast.Common.csproj": {
+                "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Common\\Microvast.Common.csproj"
               },
-              "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Model\\Microvast.Model.csproj": {
-                "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Model\\Microvast.Model.csproj"
+              "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Model\\Microvast.Model.csproj": {
+                "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Model\\Microvast.Model.csproj"
               },
-              "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj": {
-                "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj"
+              "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj": {
+                "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj"
               }
             }
           }
@@ -89,11 +89,11 @@
         }
       }
     },
-    "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj": {
+    "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj",
         "projectName": "Microvast.ViewModel",
-        "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj",
+        "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}

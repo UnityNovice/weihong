@@ -83,9 +83,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
+      "projectUniqueName": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
       "projectName": "Microvast.Service",
-      "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
+      "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Service\\Microvast.Service.csproj",
       "packagesPath": "C:\\Users\\2200214\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Service\\obj\\",
       "projectStyle": "PackageReference",
@@ -104,14 +104,14 @@
         "net48": {
           "targetAlias": "net48",
           "projectReferences": {
-            "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Common\\Microvast.Common.csproj": {
-              "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Common\\Microvast.Common.csproj"
+            "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Common\\Microvast.Common.csproj": {
+              "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Common\\Microvast.Common.csproj"
             },
-            "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Model\\Microvast.Model.csproj": {
-              "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.Model\\Microvast.Model.csproj"
+            "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Model\\Microvast.Model.csproj": {
+              "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.Model\\Microvast.Model.csproj"
             },
-            "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj": {
-              "projectPath": "C:\\Users\\2200214\\Source\\Repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj"
+            "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj": {
+              "projectPath": "C:\\Users\\2200214\\source\\repos\\weihong\\Microvast.ViewModel\\Microvast.ViewModel.csproj"
             }
           }
         }

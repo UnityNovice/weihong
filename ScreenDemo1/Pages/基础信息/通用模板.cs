@@ -19,6 +19,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Test;
+using Microvast.Common.Utils;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 namespace ScreenDemo1.Pages.基础信息
 {
@@ -38,6 +39,12 @@ namespace ScreenDemo1.Pages.基础信息
                 this.CodeNameTxt.Visible = false;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="TempTablename"></param>表名
+        /// <param name="TempCodename"></param>码名
+        /// <param name="TempTimename"></param>时间名
         public 通用模板(string TempTablename, string TempCodename, string TempTimename)
         {
             Codename = TempCodename;
@@ -333,7 +340,7 @@ namespace ScreenDemo1.Pages.基础信息
         }
         private void 查询1_Click(object sender, EventArgs e)
         {
-            SqlSugarHelper sqlSugarHelper = new SqlSugarHelper();
+            SqlSugarServerHelper sqlSugarHelper = new SqlSugarServerHelper();
             var res = sqlSugarHelper.db.Queryable<基础物料信息表>().ToList();
             DataInfo.Clear();
             //  DataInfo = ListToTable<基础物料信息表>(res, false);
@@ -412,7 +419,7 @@ namespace ScreenDemo1.Pages.基础信息
             if (PageCount == 0)
             {
                 DataTable dt = this.DatabaseSource.DataSource as DataTable;
-                dt.Rows.Clear();
+                if (dt != null) dt.Rows.Clear();
                 this.DatabaseSource.DataSource = dt;
             }
         }
@@ -432,6 +439,7 @@ namespace ScreenDemo1.Pages.基础信息
             }
             else
             {
+                InitDataSet();
                 MessageBox.Show("未检索到数据！");
             }
         }
@@ -442,25 +450,22 @@ namespace ScreenDemo1.Pages.基础信息
         }
         private void 删除_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("请确认是否删除!!!","删除提示",MessageBoxButtons.OKCancel);
+            DialogResult dr = MessageBox.Show("请确认是否删除!!!", "删除提示", MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
             {
                 SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
                 //获取Id值
                 int Id = Convert.ToInt32(this.DatabaseSource.CurrentRow.Cells[0].Value);
                 sqlSugarServerHelper.db.Ado.ExecuteCommand($"delete from huzhou_{Tablename} where Id={Id}");
-                InitInfo(this.Tablename);
                 MessageBox.Show("已删除");
+                InitInfo(this.Tablename);
             }
-          
-
-       
         }
         private void 修改_Click(object sender, EventArgs e)
         {
             //获取Id值
             int Id = Convert.ToInt32(this.DatabaseSource.CurrentRow.Cells[0].Value);
-            通用弹窗 通用弹窗 = new 通用弹窗(this.Tablename, Id,2);
+            通用弹窗 通用弹窗 = new 通用弹窗(this.Tablename, Id, 2);
             通用弹窗.ShowDialog();
         }
         private void CodeQureybtn_Click(object sender, EventArgs e)
@@ -484,7 +489,6 @@ namespace ScreenDemo1.Pages.基础信息
             {
                 MessageBox.Show("未检索到数据！");
             }
-           
         }
         private void TimeQureybtn_Click(object sender, EventArgs e)
         {
@@ -604,7 +608,7 @@ namespace ScreenDemo1.Pages.基础信息
         private void timer1_Tick(object sender, EventArgs e)
         {
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
-            string sql = "DECLARE @tmp_tbl TABLE([id] int, [批次号] varchar(255), [日期] datetime, [工序] varchar(255), [工单号] varchar(255)) INSERT INTO[dbo].[huzhou_过站数据报表] OUTPUT INSERTED.[id], INSERTED.[批次号], INSERTED.[日期], INSERTED.[工序], INSERTED.[工单号] INTO @tmp_tbl DEFAULT VALUES SELECT* FROM @tmp_tbl";
+            string sql = "DECLARE @tmp_tbl TABLE([id] int, [批次号] varchar(255), [日期] datetime, [工序] varchar(255)) INSERT INTO[dbo].[huzhou_过站数据报表] OUTPUT INSERTED.[id], INSERTED.[批次号], INSERTED.[日期], INSERTED.[工序] INTO @tmp_tbl DEFAULT VALUES SELECT* FROM @tmp_tbl";
             var dt = sqlSugarServerHelper.db.Ado.GetDataTable(sql);
         }
     }
