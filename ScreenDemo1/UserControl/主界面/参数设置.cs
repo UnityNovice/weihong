@@ -42,48 +42,54 @@ namespace Test.NewFolder1
         #endregion
         private void 读取_Click(object sender, EventArgs e)
         {
-            PLC_IP.Text = "";
-            MES_IP.Text = "";
-            ProcessNo.Text = "";
-            PLC_IP.Text = Setting.IniReadValue("Setting", "PLC_IP");
-            MES_IP.Text = Setting.IniReadValue("Setting", "MES_IP");
-            ProcessNo.Text = Setting.IniReadValue("Setting", "当前工序");
+            ReadSetting();
             MessageBox.Show("已读取！");
         }
         private void 参数设置_Load(object sender, EventArgs e)
         {
             Setting.inipath = System.Windows.Forms.Application.StartupPath + "\\config.ini";
             Setting.ExistINIFile();
-            PLC_IP.Text = Setting.IniReadValue("Setting", "PLC_IP");
-            MES_IP.Text = Setting.IniReadValue("Setting", "MES_IP");
-            ProcessNo.Text = Setting.IniReadValue("Setting", "当前工序");
+            ReadSetting();
         }
         private void 确认_Click(object sender, EventArgs e)
         {
-            if (!IsRightIP(PLC_IP.Text))
+            if (!IsRightIP(PLC_IPtxt.Text))
             {
                 MessageBox.Show("PLC_IP校验错误：格式错误,请重新输入！");
-                PLC_IP.Text = Setting.IniReadValue("Setting", "PLC_IP");
+                PLC_IPtxt.Text = Setting.IniReadValue("Setting", "PLC_IP");
                 return;
             }
-            if (!IsRightIP(MES_IP.Text))
+            if (!IsRightIP(本地数据库地址txt.Text))
             {
-                MessageBox.Show("MES_IP校验错误：格式错误,请重新输入！");
-                MES_IP.Text = Setting.IniReadValue("Setting", "MES_IP");
+                MessageBox.Show("本地数据库地址_IP校验错误：格式错误,请重新输入！");
+                本地数据库地址txt.Text = Setting.IniReadValue("Setting", "本地数据库地址");
                 return;
             }
-            if (ProcessNo.Text == "")
+            if (!IsRightIP(中间数据库地址txt.Text))
+            {
+                MessageBox.Show("中间数据库地址_IP校验错误：格式错误,请重新输入！");
+                本地数据库地址txt.Text = Setting.IniReadValue("Setting", "中间数据库地址");
+                return;
+            }
+            if (ProcessNotxt.Text == "")
             {
                 MessageBox.Show("工序错误：不可为空！");
-                ProcessNo.Text = Setting.IniReadValue("Setting", "当前工序");
+                ProcessNotxt.Text = Setting.IniReadValue("Setting", "当前工序");
                 return;
             }
             DialogResult dr = MessageBox.Show("请确认是否写入？", "修改参数", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                Setting.IniWriteValue("Setting", "PLC_IP", PLC_IP.Text.Trim());
-                Setting.IniWriteValue("Setting", "MES_IP", MES_IP.Text.Trim());
-                Setting.IniWriteValue("Setting", "当前工序", ProcessNo.Text.Trim());
+                Setting.IniWriteValue("Setting", "PLC_IP", PLC_IPtxt.Text.Trim());
+                Setting.IniWriteValue("Setting", "当前工序", ProcessNotxt.Text.Trim());
+                Setting.IniWriteValue("Setting", "本地数据库地址", 本地数据库地址txt.Text.Trim());
+                Setting.IniWriteValue("Setting", "本地数据库名", 本地数据库名txt.Text.Trim());
+                Setting.IniWriteValue("Setting", "本地数据库用户名", 本地数据库用户名txt.Text.Trim());
+                Setting.IniWriteValue("Setting", "本地数据库密码", 本地数据库密码txt.Text.Trim());
+                Setting.IniWriteValue("Setting", "中间数据库地址", 中间数据库地址txt.Text.Trim());
+                Setting.IniWriteValue("Setting", "中间数据库名", 中间数据库名txt.Text.Trim());
+                Setting.IniWriteValue("Setting", "中间数据库用户名", 中间数据库用户名txt.Text.Trim());
+                Setting.IniWriteValue("Setting", "中间数据库密码", 中间数据库密码txt.Text.Trim());
                 MessageBox.Show("写入完成");
             }
             else
@@ -152,5 +158,28 @@ namespace Test.NewFolder1
             return Result;
         }
         #endregion
+        private void ReadSetting()
+        {
+            //PLC_IPtxt.Text = "";
+            //ProcessNotxt.Text = "";
+            //本地数据库地址txt.Text = "";
+            //本地数据库名txt.Text = "";
+            //本地数据库用户名txt.Text = "";
+            //本地数据库密码txt.Text = "";
+            //中间数据库地址txt.Text = "";
+            //中间数据库名txt.Text = "";
+            //中间数据库用户名txt.Text = "";
+            //中间数据库密码txt.Text = "";
+            PLC_IPtxt.Text = Setting.IniReadValue("Setting", "PLC_IP");
+            ProcessNotxt.Text = Setting.IniReadValue("Setting", "当前工序");
+            本地数据库地址txt.Text = Setting.IniReadValue("Setting", "本地数据库地址");
+            本地数据库名txt.Text = Setting.IniReadValue("Setting", "本地数据库名");
+            本地数据库用户名txt.Text = Setting.IniReadValue("Setting", "本地数据库用户名");
+            本地数据库密码txt.Text = Setting.IniReadValue("Setting", "本地数据库密码");
+            中间数据库地址txt.Text = Setting.IniReadValue("Setting", "中间数据库地址");
+            中间数据库名txt.Text = Setting.IniReadValue("Setting", "中间数据库名");
+            中间数据库用户名txt.Text = Setting.IniReadValue("Setting", "中间数据库用户名");
+            中间数据库密码txt.Text = Setting.IniReadValue("Setting", "中间数据库密码");
+        }
     }
 }
