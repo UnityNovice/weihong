@@ -145,11 +145,14 @@ namespace Test.NewFolder1
                 //点取消的代码        
             }
         }
+        string 当前配置工序 = "";
         private void 主界面_Load(object sender, EventArgs e)
         {
             Setting.inipath = System.Windows.Forms.Application.StartupPath + "\\config.ini";
             Setting.ExistINIFile();
+            当前配置工序 = Setting.IniReadValue("Setting", "当前工序");
         }
+
         private void labelResult_Click(object sender, EventArgs e)
         {
             updateLogs("M校验成功：批次号" + Guid.NewGuid().ToString("N").Substring(0, 20) + "\r\n");
@@ -577,7 +580,7 @@ namespace Test.NewFolder1
         #region 方法
         public void 加载工单()
         {
-            var workOrders=搅拌Service.正极加载工单();
+            var workOrders = 通用Service.加载工单(当前配置工序);
             AddWorkOrderPanel(workOrders);
         }
         #endregion

@@ -114,10 +114,12 @@ namespace Test.NewFolder1
                 //点取消的代码        
             }
         }
+        string 当前配置工序 = "";
         private void 主界面_Load(object sender, EventArgs e)
         {
             Setting.inipath = System.Windows.Forms.Application.StartupPath + "\\config.ini";
             Setting.ExistINIFile();
+            当前配置工序 = Setting.IniReadValue("Setting", "当前工序");
         }
         private void labelResult_Click(object sender, EventArgs e)
         {
@@ -129,6 +131,7 @@ namespace Test.NewFolder1
         }
         private void 读取工单_Click(object sender, EventArgs e)
         {
+
             //List<WorkOrder> workOrders = new List<WorkOrder>();
             //for (int i = 0; i < 4; i++)
             //{
@@ -494,11 +497,13 @@ namespace Test.NewFolder1
                 this.logtype = type;
             }
         }
-
+       
         #region 方法
         public void 加载工单()
         {
-            var workOrders = 涂布Service.正极加载工单();
+            // var workOrders = 涂布Service.正极加载工单();
+            var workOrders = 通用Service.加载工单(当前配置工序);
+
             AddWorkOrderPanel(workOrders);
         }
         #endregion
