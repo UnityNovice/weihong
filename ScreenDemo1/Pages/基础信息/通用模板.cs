@@ -450,6 +450,10 @@ namespace ScreenDemo1.Pages.基础信息
         }
         private void 删除_Click(object sender, EventArgs e)
         {
+            if (this.Tablename == "生产工单")
+            {
+                MessageBox.Show("无法删除工单数据");
+            }
             DialogResult dr = MessageBox.Show("请确认是否删除!!!", "删除提示", MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
             {
@@ -465,6 +469,16 @@ namespace ScreenDemo1.Pages.基础信息
         {
             //获取Id值
             int Id = Convert.ToInt32(this.DatabaseSource.CurrentRow.Cells[0].Value);
+            if(this.Tablename=="生产工单")
+            {
+                int a = DatabaseSource.CurrentRow.Index;
+                string str = DatabaseSource.CurrentRow.Cells[14].Value.ToString();
+                if(str.IndexOf("未生产")>-1 || str.IndexOf("暂停中")>-1)
+                {
+                    MessageBox.Show("无法修改生产中或者暂停中的工单数据");
+                    return;
+                }
+            }
             通用弹窗 通用弹窗 = new 通用弹窗(this.Tablename, Id, 2);
             通用弹窗.ShowDialog();
         }

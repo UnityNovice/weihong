@@ -11,7 +11,7 @@ namespace Microvast.Common.Utils
     {
         public SqlSugarClient db;
         private static readonly string _connectionstring = ReadConfig.GetLocalDataSetting();
-     //   private static readonly string _connectionstring =  AppConfigHelper.GetConnectionString("sqlserver");
+        //   private static readonly string _connectionstring =  AppConfigHelper.GetConnectionString("sqlserver");
         public SqlSugarServerHelper()
         {
             db = new SqlSugarClient(new ConnectionConfig()
