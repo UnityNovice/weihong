@@ -337,7 +337,7 @@ namespace Test.NewFolder1
                     BeginInvoke(new MethodInvoker(delegate ()
                     {
                         TempButton1.BackColor = System.Drawing.Color.Transparent;
-                        TempButton1.ForeColor = System.Drawing.Color.White;
+                        TempButton1.ForeColor = System.Drawing.Color.Black;
                     }));
                 }
             }
