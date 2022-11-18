@@ -42,6 +42,11 @@ namespace ScreenDemo1.SmallForm
         #endregion
         private void 保存_Click(object sender, EventArgs e)
         {
+            if(报废重量.Text==""|| 报废批次号.Text=="")
+            {
+                MessageBox.Show("报废数量或批次号为空!");
+                return;
+            }
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
             报废记录变量.报废批次号 = this.报废批次号.Text.ToString();
             报废记录变量.报废数量 = this.报废重量.Text.ToString();
