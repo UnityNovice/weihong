@@ -183,3 +183,6 @@ C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\obj\Debug\ScreenDemo1.csproj.C
 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\obj\Debug\ScreenDemo1.csproj.CopyComplete
 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\obj\Debug\ScreenDemo1.exe
 C:\Users\2200214\Source\Repos\weihong\ScreenDemo1\obj\Debug\ScreenDemo1.pdb
+C:\Users\2200214\source\repos\weihong\ScreenDemo1\bin\Debug\S7.Net.dll
+C:\Users\2200214\source\repos\weihong\ScreenDemo1\bin\Debug\S7.Net.xml
+C:\Users\2200214\source\repos\weihong\ScreenDemo1\bin\Debug\HslCommunication.dll

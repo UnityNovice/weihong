@@ -34,12 +34,12 @@
             this.读取 = new Sunny.UI.UIButton();
             this.确认 = new Sunny.UI.UIButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.本地数据库用户名txt = new Sunny.UI.UITextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.本地数据库密码txt = new Sunny.UI.UITextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.本地数据库名txt = new Sunny.UI.UITextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.本地数据库密码txt = new Sunny.UI.UITextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.本地数据库用户名txt = new Sunny.UI.UITextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.中间数据库名txt = new Sunny.UI.UITextBox();
@@ -51,6 +51,8 @@
             this.中间数据库地址txt = new Sunny.UI.UITextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ProcessNotxt = new Sunny.UI.UIComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PLCType = new Sunny.UI.UIComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,7 +62,7 @@
             // 
             this.PLC_IPtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.PLC_IPtxt.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.PLC_IPtxt.Location = new System.Drawing.Point(221, 95);
+            this.PLC_IPtxt.Location = new System.Drawing.Point(221, 100);
             this.PLC_IPtxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PLC_IPtxt.MinimumSize = new System.Drawing.Size(1, 16);
             this.PLC_IPtxt.Name = "PLC_IPtxt";
@@ -76,7 +78,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.label36.ForeColor = System.Drawing.Color.Black;
-            this.label36.Location = new System.Drawing.Point(59, 96);
+            this.label36.Location = new System.Drawing.Point(52, 96);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(114, 25);
             this.label36.TabIndex = 20;
@@ -113,7 +115,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(42, 45);
+            this.label2.Location = new System.Drawing.Point(35, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 25);
             this.label2.TabIndex = 24;
@@ -202,31 +204,31 @@
             this.panel1.Size = new System.Drawing.Size(528, 660);
             this.panel1.TabIndex = 29;
             // 
-            // label5
+            // label7
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(33, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 25);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "本地数据库用户名:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(71, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 25);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "本地数据库名:";
             // 
-            // 本地数据库用户名txt
+            // 本地数据库名txt
             // 
-            this.本地数据库用户名txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.本地数据库用户名txt.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.本地数据库用户名txt.Location = new System.Drawing.Point(241, 157);
-            this.本地数据库用户名txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.本地数据库用户名txt.MinimumSize = new System.Drawing.Size(1, 16);
-            this.本地数据库用户名txt.Name = "本地数据库用户名txt";
-            this.本地数据库用户名txt.ShowText = false;
-            this.本地数据库用户名txt.Size = new System.Drawing.Size(236, 26);
-            this.本地数据库用户名txt.TabIndex = 25;
-            this.本地数据库用户名txt.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.本地数据库用户名txt.Watermark = "";
-            this.本地数据库用户名txt.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.本地数据库名txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.本地数据库名txt.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.本地数据库名txt.Location = new System.Drawing.Point(241, 96);
+            this.本地数据库名txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.本地数据库名txt.MinimumSize = new System.Drawing.Size(1, 16);
+            this.本地数据库名txt.Name = "本地数据库名txt";
+            this.本地数据库名txt.ShowText = false;
+            this.本地数据库名txt.Size = new System.Drawing.Size(236, 26);
+            this.本地数据库名txt.TabIndex = 29;
+            this.本地数据库名txt.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.本地数据库名txt.Watermark = "";
+            this.本地数据库名txt.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // label6
             // 
@@ -254,31 +256,31 @@
             this.本地数据库密码txt.Watermark = "";
             this.本地数据库密码txt.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(71, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 25);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "本地数据库名:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(33, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 25);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "本地数据库用户名:";
             // 
-            // 本地数据库名txt
+            // 本地数据库用户名txt
             // 
-            this.本地数据库名txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.本地数据库名txt.Font = new System.Drawing.Font("微软雅黑", 14F);
-            this.本地数据库名txt.Location = new System.Drawing.Point(241, 96);
-            this.本地数据库名txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.本地数据库名txt.MinimumSize = new System.Drawing.Size(1, 16);
-            this.本地数据库名txt.Name = "本地数据库名txt";
-            this.本地数据库名txt.ShowText = false;
-            this.本地数据库名txt.Size = new System.Drawing.Size(236, 26);
-            this.本地数据库名txt.TabIndex = 29;
-            this.本地数据库名txt.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.本地数据库名txt.Watermark = "";
-            this.本地数据库名txt.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.本地数据库用户名txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.本地数据库用户名txt.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.本地数据库用户名txt.Location = new System.Drawing.Point(241, 157);
+            this.本地数据库用户名txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.本地数据库用户名txt.MinimumSize = new System.Drawing.Size(1, 16);
+            this.本地数据库用户名txt.Name = "本地数据库用户名txt";
+            this.本地数据库用户名txt.ShowText = false;
+            this.本地数据库用户名txt.Size = new System.Drawing.Size(236, 26);
+            this.本地数据库用户名txt.TabIndex = 25;
+            this.本地数据库用户名txt.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.本地数据库用户名txt.Watermark = "";
+            this.本地数据库用户名txt.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
             // panel2
             // 
@@ -303,9 +305,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(54, 96);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 25);
+            this.label8.Size = new System.Drawing.Size(171, 25);
             this.label8.TabIndex = 30;
-            this.label8.Text = "中间数据库名:";
+            this.label8.Text = "MES中间数据库名:";
             // 
             // 中间数据库名txt
             // 
@@ -329,9 +331,9 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(35, 217);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 25);
+            this.label9.Size = new System.Drawing.Size(190, 25);
             this.label9.TabIndex = 28;
-            this.label9.Text = "中间数据库密码:";
+            this.label9.Text = "MES中间数据库密码:";
             // 
             // 中间数据库密码txt
             // 
@@ -355,9 +357,9 @@
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(16, 157);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(169, 25);
+            this.label10.Size = new System.Drawing.Size(209, 25);
             this.label10.TabIndex = 26;
-            this.label10.Text = "中间数据库用户名:";
+            this.label10.Text = "MES中间数据库用户名:";
             // 
             // 中间数据库用户名txt
             // 
@@ -381,9 +383,9 @@
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(35, 45);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(150, 25);
+            this.label13.Size = new System.Drawing.Size(190, 25);
             this.label13.TabIndex = 22;
-            this.label13.Text = "中间数据库地址:";
+            this.label13.Text = "MES中间数据库地址:";
             // 
             // 中间数据库地址txt
             // 
@@ -403,6 +405,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.PLCType);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.ProcessNotxt);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.PLC_IPtxt);
@@ -435,6 +439,39 @@
             this.ProcessNotxt.Watermark = "";
             this.ProcessNotxt.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 14F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(76, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 25);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "PLC类型:";
+            // 
+            // PLCType
+            // 
+            this.PLCType.DataSource = null;
+            this.PLCType.FillColor = System.Drawing.Color.White;
+            this.PLCType.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PLCType.Items.AddRange(new object[] {
+            "1200",
+            "1500",
+            "Smart",
+            "200",
+            "300"});
+            this.PLCType.Location = new System.Drawing.Point(221, 156);
+            this.PLCType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PLCType.MinimumSize = new System.Drawing.Size(63, 0);
+            this.PLCType.Name = "PLCType";
+            this.PLCType.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.PLCType.Size = new System.Drawing.Size(236, 26);
+            this.PLCType.TabIndex = 26;
+            this.PLCType.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PLCType.Watermark = "";
+            this.PLCType.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
             // 参数设置
             // 
             this.BackColor = System.Drawing.Color.Transparent;
@@ -455,6 +492,7 @@
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         private Sunny.UI.UITextBox PLC_IPtxt;
@@ -483,5 +521,7 @@
         private Sunny.UI.UITextBox 中间数据库地址txt;
         private System.Windows.Forms.Panel panel3;
         private Sunny.UI.UIComboBox ProcessNotxt;
+        private Sunny.UI.UIComboBox PLCType;
+        private System.Windows.Forms.Label label3;
     }
 }

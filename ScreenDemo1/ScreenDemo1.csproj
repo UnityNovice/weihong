@@ -36,6 +36,12 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HslCommunication">
+      <HintPath>D:\EysenWorkSpace\04 Test\S7TEST\S7TEST\bin\Debug\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="S7.Net, Version=0.15.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <HintPath>..\packages\S7netplus.0.15.0\lib\net452\S7.Net.dll</HintPath>
+    </Reference>
     <Reference Include="SqlSugar">
       <HintPath>..\..\..\..\..\..\..\04 Test\sqlsurgar\sqlsurgar\bin\Debug\SqlSugar.dll</HintPath>
     </Reference>
@@ -93,6 +99,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="S7HelperNew.cs" />
     <Compile Include="SmallForm\AGV叫料.cs">
       <SubType>Form</SubType>
     </Compile>

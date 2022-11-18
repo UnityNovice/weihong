@@ -38,3 +38,5 @@ C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Commo
 C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.csproj.CopyComplete
 C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.dll
 C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.pdb
+C:\Users\2200214\source\repos\weihong\Microvast.Common\bin\Debug\S7.Net.dll
+C:\Users\2200214\source\repos\weihong\Microvast.Common\bin\Debug\S7.Net.xml

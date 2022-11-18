@@ -8,8 +8,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microvast.Common.Utils;
 using Microvast.Common.Vuex;
+using Microvast.Model;
 using Microvast.Service;
+using S7.Net;
 using ScreenDemo1.Pages.基础信息;
 using Sunny.UI;
 using Test;
@@ -41,6 +44,9 @@ namespace ScreenDemo1
         public string 角色 = "";
         public string 登录名 = "";
         public string 工号 = "";
+        public List<DataRefence> dataRefenceList = new List<DataRefence>();
+        public string PLC类型 = "";
+        S7HelperNew plc = new S7HelperNew();
         #endregion
         private void InitMenu()
         {
@@ -177,7 +183,12 @@ namespace ScreenDemo1
             //TreeNode parent = Menu.CreateNode("配料", 61451, 24, 1);
             当前工序 = Setting.IniReadValue("Setting", "当前工序");
             当前允许菜单项 = 当前允许菜单项.Replace("当前工序", 当前工序);
+            PLC类型 = Setting.IniReadValue("Setting", "PLC类型");
             InitMenu();
+            SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
+
+            dataRefenceList = sqlSugarServerHelper.db.Queryable<DataRefence>().Where(a => a.process_no == 当前工序).ToList();
+           if(!plc.PLCCon(Setting.IniReadValue("Setting", "PLC_IP"))) MessageBox.Show("plc未链接！");
             switch (当前工序)
             {
                 case "正极搅拌": this.uiPanel1.Controls.Add(搅拌正极主界面); break;

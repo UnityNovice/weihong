@@ -172,6 +172,7 @@ namespace Test.NewFolder1
             //中间数据库密码txt.Text = "";
             PLC_IPtxt.Text = Setting.IniReadValue("Setting", "PLC_IP");
             ProcessNotxt.Text = Setting.IniReadValue("Setting", "当前工序");
+            PLCType.Text = Setting.IniReadValue("Setting", "PLC类型");
             本地数据库地址txt.Text = Setting.IniReadValue("Setting", "本地数据库地址");
             本地数据库名txt.Text = Setting.IniReadValue("Setting", "本地数据库名");
             本地数据库用户名txt.Text = Setting.IniReadValue("Setting", "本地数据库用户名");

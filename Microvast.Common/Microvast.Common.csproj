@@ -59,6 +59,8 @@
     <Compile Include="Utils\AppConfigHelper.cs" />
     <Compile Include="Utils\ExcelHelper.cs" />
     <Compile Include="Utils\IniReadWriteOther.cs" />
+    <Compile Include="Utils\JsonHelper.cs" />
+    <Compile Include="Utils\P_Trig.cs" />
     <Compile Include="Utils\ReadConfig.cs" />
     <Compile Include="Utils\S7Helper.cs" />
     <Compile Include="Utils\TempMidTableSqlSugarServerHelper.cs" />
