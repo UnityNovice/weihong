@@ -78,6 +78,7 @@
             this.合批后重量.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.合批后重量.Watermark = "";
             this.合批后重量.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.合批后重量.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNum_KeyPress);
             // 
             // label55
             // 
@@ -116,6 +117,7 @@
             this.合批批次号2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.合批批次号2.Watermark = "";
             this.合批批次号2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.合批批次号2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoCn_KeyPress);
             // 
             // 合批批次号1
             // 
@@ -132,6 +134,7 @@
             this.合批批次号1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.合批批次号1.Watermark = "";
             this.合批批次号1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.合批批次号1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoCn_KeyPress);
             // 
             // 合批
             // 
@@ -154,6 +157,7 @@
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 791, 424);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         public Sunny.UI.UIButton 确认;

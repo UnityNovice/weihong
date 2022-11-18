@@ -47,5 +47,25 @@ namespace ScreenDemo1.SmallForm
             sqlSugarServerHelper.db.Insertable(拆批记录变量).ExecuteCommand();
             this.Close();
         }
+
+        private void NoCn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar >= 'A' && e.KeyChar <= 'Z') || (e.KeyChar >= 'a' && e.KeyChar <= 'z') || e.KeyChar == '\b')
+            {
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void OnlyNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int key = e.KeyChar;
+            if ((key < '0' || key > '9') && (key != 8 && key != 46))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

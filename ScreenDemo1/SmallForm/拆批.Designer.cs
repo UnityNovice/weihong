@@ -58,6 +58,7 @@
             this.拆批后该批重量.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.拆批后该批重量.Watermark = "";
             this.拆批后该批重量.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.拆批后该批重量.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNum_KeyPress);
             // 
             // label59
             // 
@@ -85,6 +86,7 @@
             this.拆批批次号.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.拆批批次号.Watermark = "";
             this.拆批批次号.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.拆批批次号.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoCn_KeyPress);
             // 
             // 确认
             // 
@@ -131,6 +133,7 @@
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 791, 424);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         private System.Windows.Forms.Label label57;

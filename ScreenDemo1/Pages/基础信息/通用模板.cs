@@ -453,6 +453,7 @@ namespace ScreenDemo1.Pages.基础信息
             if (this.Tablename == "生产工单")
             {
                 MessageBox.Show("无法删除工单数据");
+                return;
             }
             DialogResult dr = MessageBox.Show("请确认是否删除!!!", "删除提示", MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
@@ -474,6 +475,9 @@ namespace ScreenDemo1.Pages.基础信息
                 int a = DatabaseSource.CurrentRow.Index;
                 string str = DatabaseSource.CurrentRow.Cells[14].Value.ToString();
                 if(str.IndexOf("未生产")>-1 || str.IndexOf("暂停中")>-1)
+                {
+                }
+                else
                 {
                     MessageBox.Show("无法修改生产中或者暂停中的工单数据");
                     return;

@@ -24,6 +24,8 @@ using Microvast.Service;
 using Microvast.ViewModel;
 using Microvast.Model;
 using Microvast.Common.Utils;
+using ScreenDemo1;
+
 namespace Test.NewFolder1
 {
     public partial class 涂布负极主界面 : UserControl
@@ -307,7 +309,7 @@ namespace Test.NewFolder1
             拆批类.拆批后批次1重量 = "拆批后批次1重量";
             拆批类.拆批后批次2 = "拆批后批次2";
             拆批类.拆批后批次2重量 = "拆批后批次2重量";
-            拆批类.拆批操作者 = "拆批操作者";
+            拆批类.拆批操作者 = Form1.mainForm.登录名;
             拆批类.时间 = DateTime.Now;
             拆批 拆批 = new 拆批(拆批类);
             拆批.Show();
@@ -321,14 +323,18 @@ namespace Test.NewFolder1
             合批类.合批前批次2重量 = "合批前批次2重量";
             合批类.合批后批次 = "合批后批次";
             合批类.合批后批次重量 = "合批后批次重量";
-            合批类.合批操作者 = "合批操作者";
+            合批类.合批操作者 = Form1.mainForm.登录名;
             合批类.时间 = DateTime.Now;
             合批 合批 = new 合批(合批类);
             合批.Show();
         }
         private void 报废_Click(object sender, EventArgs e)
         {
-            报废 报废 = new 报废();
+
+            huzhou_报废报表 报废类 = new huzhou_报废报表();
+            //报废类.
+            报废类.时间= DateTime.Now;
+            报废 报废 = new 报废(报废类);
             报废.Show();
         }
         private void 运行记录_Click(object sender, EventArgs e)

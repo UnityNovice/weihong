@@ -332,7 +332,10 @@ namespace Test.NewFolder1
         }
         private void 报废_Click_1(object sender, EventArgs e)
         {
-            报废 报废 = new 报废();
+            huzhou_报废报表 报废类 = new huzhou_报废报表();
+
+            报废类.时间 = DateTime.Now;
+            报废 报废 = new 报废(报废类);
             报废.Show();
         }
         private void 运行记录_Click_1(object sender, EventArgs e)

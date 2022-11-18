@@ -60,7 +60,7 @@
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(86, 24);
             this.label58.TabIndex = 33;
-            this.label58.Text = "报废重量:";
+            this.label58.Text = "报废数量:";
             // 
             // 报废重量
             // 
@@ -77,6 +77,7 @@
             this.报废重量.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.报废重量.Watermark = "";
             this.报废重量.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.报废重量.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNum_KeyPress);
             // 
             // label60
             // 
@@ -104,6 +105,7 @@
             this.报废批次号.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.报废批次号.Watermark = "";
             this.报废批次号.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.报废批次号.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoCn_KeyPress);
             // 
             // 报废
             // 
@@ -125,6 +127,7 @@
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 791, 424);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         public Sunny.UI.UIButton 确定;

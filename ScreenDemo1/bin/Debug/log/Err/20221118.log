@@ -1,0 +1,15 @@
+
+
+发生时间：2022_11_18 08:12:04    System.Data.SqlClient.SqlException (0x80131904): 列名 '工序' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.Qurey(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 612
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:28ed5c5a-3ecf-4ca7-9d7c-6d8e7b0a1361
+Error Number:207,State:1,Class:16

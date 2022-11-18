@@ -48,6 +48,10 @@ namespace Microvast.Model
 		///拆批操作者
 		///</summary>
 		public string 拆批操作者 { get; set; }
-		
-	}
+
+        public string 工序 { get; set; }
+
+
+
+    }
 }
