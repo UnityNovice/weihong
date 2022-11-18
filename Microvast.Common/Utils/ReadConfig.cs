@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Microvast.Common.Utils
 {
     public class   ReadConfig
@@ -22,8 +21,5 @@ namespace Microvast.Common.Utils
             string constring =" Data Source = "+ IP + "; Initial Catalog =  "+ SQLName+"; Persist Security Info = True; User ID = "+UserName+"; pwd = "+Userpwd;
             return constring;
         }
-
-
-
     }
 }

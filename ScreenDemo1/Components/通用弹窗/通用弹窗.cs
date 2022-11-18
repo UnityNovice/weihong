@@ -532,7 +532,6 @@ namespace ScreenDemo1.Components.通用弹窗
         #endregion
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
             //if(FormType==2)
             //{
             //    if()

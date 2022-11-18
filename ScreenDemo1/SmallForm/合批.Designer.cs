@@ -157,7 +157,6 @@
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 791, 424);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
         public Sunny.UI.UIButton 确认;

@@ -22,7 +22,6 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using ScreenDemo1.SmallForm;
 using Microvast.Model;
 using ScreenDemo1;
-
 namespace Test.NewFolder1
 {
     public partial class 辊压负极主界面 : UserControl
@@ -113,11 +112,8 @@ namespace Test.NewFolder1
             拆批类.拆批操作者 = Form1.mainForm.登录名;
             拆批类.时间 = DateTime.Now;
             拆批类.工序 = Form1.mainForm.当前工序;
-
             拆批 拆批 = new 拆批(拆批类);
             拆批.Show();
-
-
         }
         private void 合批_Click(object sender, EventArgs e)
         {
@@ -131,7 +127,6 @@ namespace Test.NewFolder1
             合批类.合批操作者 = Form1.mainForm.登录名;
             合批类.时间 = DateTime.Now;
             合批类.工序 = Form1.mainForm.当前工序;
-
             合批 合批 = new 合批(合批类);
             合批.Show();
         }

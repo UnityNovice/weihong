@@ -25,7 +25,6 @@ using Microvast.ViewModel;
 using Microvast.Model;
 using Microvast.Common.Utils;
 using ScreenDemo1;
-
 namespace Test.NewFolder1
 {
     public partial class 涂布负极主界面 : UserControl
@@ -312,7 +311,6 @@ namespace Test.NewFolder1
             拆批类.拆批操作者 = Form1.mainForm.登录名;
             拆批类.时间 = DateTime.Now;
             拆批类.工序 = Form1.mainForm.当前工序;
-
             拆批 拆批 = new 拆批(拆批类);
             拆批.Show();
         }
@@ -328,13 +326,11 @@ namespace Test.NewFolder1
             合批类.合批操作者 = Form1.mainForm.登录名;
             合批类.时间 = DateTime.Now;
             合批类.工序 = Form1.mainForm.当前工序;
-
             合批 合批 = new 合批(合批类);
             合批.Show();
         }
         private void 报废_Click(object sender, EventArgs e)
         {
-
             huzhou_报废报表 报废类 = new huzhou_报废报表();
             报废类.工序 = Form1.mainForm.当前工序;
             报废类.时间 = DateTime.Now;

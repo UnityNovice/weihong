@@ -18,7 +18,6 @@ namespace ScreenDemo1.SmallForm
     public partial class 报废 : UIForm
     {
         public huzhou_报废报表 报废记录变量 = null;
-
         public 报废()
         {
             InitializeComponent();
@@ -42,7 +41,7 @@ namespace ScreenDemo1.SmallForm
         #endregion
         private void 保存_Click(object sender, EventArgs e)
         {
-            if(报废重量.Text==""|| 报废批次号.Text=="")
+            if (报废重量.Text == "" || 报废批次号.Text == "")
             {
                 MessageBox.Show("报废数量或批次号为空!");
                 return;
@@ -51,10 +50,8 @@ namespace ScreenDemo1.SmallForm
             报废记录变量.报废批次号 = this.报废批次号.Text.ToString();
             报废记录变量.报废数量 = this.报废重量.Text.ToString();
             sqlSugarServerHelper.db.Insertable(报废记录变量).ExecuteCommand();
-
             this.Close();
         }
-
         private void NoCn_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar >= 'A' && e.KeyChar <= 'Z') || (e.KeyChar >= 'a' && e.KeyChar <= 'z') || e.KeyChar == '\b')
@@ -65,7 +62,6 @@ namespace ScreenDemo1.SmallForm
                 e.Handled = true;
             }
         }
-
         private void OnlyNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             int key = e.KeyChar;
@@ -99,10 +95,5 @@ namespace ScreenDemo1.SmallForm
         //    sqlSugarServerHelper.db.Insertable(拆批记录变量).ExecuteCommand();
         //    this.Close();
         //}
-
-
-
-
-
     }
 }

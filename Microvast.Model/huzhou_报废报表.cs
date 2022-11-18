@@ -38,9 +38,6 @@ namespace Microvast.Model
 		///报废数量
 		///</summary>
 		public string 报废数量 { get; set; }
-
         public string 工序 { get; set; }
-
-
     }
 }

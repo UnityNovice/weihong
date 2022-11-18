@@ -26,7 +26,6 @@ using Microvast.Model;
 using Microvast.Service;
 using Microvast.ViewModel;
 using ScreenDemo1;
-
 namespace Test.NewFolder1
 {
     public partial class 搅拌正极主界面 : UserControl
@@ -330,14 +329,11 @@ namespace Test.NewFolder1
             拆批类.拆批操作者 = Form1.mainForm.登录名;
             拆批类.时间 = DateTime.Now;
             拆批类.工序 = Form1.mainForm.当前工序;
-
             拆批 拆批 = new 拆批(拆批类);
             拆批.Show();
         }
         private void 合批_Click_1(object sender, EventArgs e)
         {
-
-
             huzhou_合批报表 合批类 = new huzhou_合批报表();
             合批类.合批前批次1 = "合批前批次1";
             合批类.合批前批次1重量 = "合批前批次1重量";

@@ -133,7 +133,6 @@
             this.ZoomScaleRect = new System.Drawing.Rectangle(15, 15, 791, 424);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
         private System.Windows.Forms.Label label57;
