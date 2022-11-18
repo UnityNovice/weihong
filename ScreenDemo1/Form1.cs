@@ -34,7 +34,7 @@ namespace ScreenDemo1
         private 辊压负极主界面 辊压负极主界面 = new 辊压负极主界面();
         private 参数设置 参数设置 = new 参数设置();
         private 用户管理 用户管理 = new 用户管理();
-        private string 当前工序 = string.Empty;
+        public string 当前工序 = string.Empty;
         IniReadWrite Setting = new IniReadWrite();
         public int 权限等级 = 0;
         public string 当前允许菜单项 = "";

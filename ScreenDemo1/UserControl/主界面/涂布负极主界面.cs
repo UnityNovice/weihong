@@ -311,6 +311,8 @@ namespace Test.NewFolder1
             拆批类.拆批后批次2重量 = "拆批后批次2重量";
             拆批类.拆批操作者 = Form1.mainForm.登录名;
             拆批类.时间 = DateTime.Now;
+            拆批类.工序 = Form1.mainForm.当前工序;
+
             拆批 拆批 = new 拆批(拆批类);
             拆批.Show();
         }
@@ -325,6 +327,8 @@ namespace Test.NewFolder1
             合批类.合批后批次重量 = "合批后批次重量";
             合批类.合批操作者 = Form1.mainForm.登录名;
             合批类.时间 = DateTime.Now;
+            合批类.工序 = Form1.mainForm.当前工序;
+
             合批 合批 = new 合批(合批类);
             合批.Show();
         }
@@ -332,8 +336,8 @@ namespace Test.NewFolder1
         {
 
             huzhou_报废报表 报废类 = new huzhou_报废报表();
-            //报废类.
-            报废类.时间= DateTime.Now;
+            报废类.工序 = Form1.mainForm.当前工序;
+            报废类.时间 = DateTime.Now;
             报废 报废 = new 报废(报废类);
             报废.Show();
         }

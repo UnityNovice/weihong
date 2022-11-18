@@ -20,6 +20,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using ScreenDemo1.SmallForm;
+using Microvast.Model;
+using ScreenDemo1;
+
 namespace Test.NewFolder1
 {
     public partial class 辊压负极主界面 : UserControl
@@ -101,17 +104,43 @@ namespace Test.NewFolder1
         }
         private void 拆批_Click(object sender, EventArgs e)
         {
-            拆批 拆批 = new 拆批();
+            huzhou_拆批报表 拆批类 = new huzhou_拆批报表();
+            拆批类.拆批源批次 = "拆批源批次";
+            拆批类.拆批后批次1 = "拆批后批次1";
+            拆批类.拆批后批次1重量 = "拆批后批次1重量";
+            拆批类.拆批后批次2 = "拆批后批次2";
+            拆批类.拆批后批次2重量 = "拆批后批次2重量";
+            拆批类.拆批操作者 = Form1.mainForm.登录名;
+            拆批类.时间 = DateTime.Now;
+            拆批类.工序 = Form1.mainForm.当前工序;
+
+            拆批 拆批 = new 拆批(拆批类);
             拆批.Show();
+
+
         }
         private void 合批_Click(object sender, EventArgs e)
         {
-            合批 合批 = new 合批();
+            huzhou_合批报表 合批类 = new huzhou_合批报表();
+            合批类.合批前批次1 = "合批前批次1";
+            合批类.合批前批次1重量 = "合批前批次1重量";
+            合批类.合批前批次2 = "合批前批次2";
+            合批类.合批前批次2重量 = "合批前批次2重量";
+            合批类.合批后批次 = "合批后批次";
+            合批类.合批后批次重量 = "合批后批次重量";
+            合批类.合批操作者 = Form1.mainForm.登录名;
+            合批类.时间 = DateTime.Now;
+            合批类.工序 = Form1.mainForm.当前工序;
+
+            合批 合批 = new 合批(合批类);
             合批.Show();
         }
         private void 报废_Click(object sender, EventArgs e)
         {
-            报废 报废 = new 报废();
+            huzhou_报废报表 报废类 = new huzhou_报废报表();
+            报废类.工序 = Form1.mainForm.当前工序;
+            报废类.时间 = DateTime.Now;
+            报废 报废 = new 报废(报废类);
             报废.Show();
         }
         private void 运行记录_Click_1(object sender, EventArgs e)
