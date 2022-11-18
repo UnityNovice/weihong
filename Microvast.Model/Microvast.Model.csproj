@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataRefence.cs" />
     <Compile Include="huzhou_产品型号.cs" />
     <Compile Include="huzhou_产品数据报表.cs" />
     <Compile Include="huzhou_产线基础数据.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="huzhou_设备状态报表.cs" />
     <Compile Include="huzhou_载具基础数据.cs" />
     <Compile Include="huzhou_过站数据报表.cs" />
+    <Compile Include="MicroVastProcessProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
