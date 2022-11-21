@@ -361,11 +361,15 @@ namespace ScreenDemo1
                         if (opcConnect[key].receiveMsg == "1")//结果为1时，工件OK
                         {
                             OkFlag = "OK";
+                            ngFlag = "OK";
+                            plcFlag = "OK";
                             // plcFlag = "OK";
                         }
                         else if (opcConnect[key].receiveMsg == "2")//结果为2时，工件NG
                         {
                             OkFlag = "NG";
+                            ngFlag = "NG";
+                            plcFlag = "NG";
                             // plcFlag = "NG";
                         }
                         else//其他情况，工件为OPC返回结果值
@@ -494,6 +498,7 @@ namespace ScreenDemo1
             int res = sqlSugarServerHelper.db.Insertable(microVastProcessProperty).ExecuteCommand();
             if (res == 1)
             {
+                write(2, false);
             }
             else
             {
@@ -680,6 +685,49 @@ namespace ScreenDemo1
             secondCheckData.ngMsg = ngMsg == string.Empty ? ngMsg : ngMsg.Substring(0, ngMsg.Length - 1);
             secondCheckData.ngDataList = ngNoList;
             return secondCheckData;
+        }
+
+        public void PLC_write(string adress, short datatype, object val)
+        {
+            if (datatype == 11)
+                PLC.Write(adress, bool.Parse(val.ToString()));
+            else if (datatype == 3)
+                PLC.Write(adress, short.Parse(val.ToString()));
+            else if (datatype == 5)
+                PLC.Write(adress, float.Parse(val.ToString()));
+            else if (datatype == 8)
+                PLC.Write(adress, val.ToString());
+            else if (datatype == 8196)
+                PLC.Write(adress, val.ToString());
+            else
+            {
+            }
+        }
+        public  void write(int signType, object val, string noCheckType = "")
+        {
+            if (opcItems != null && opcItems.Count != 0)
+            {
+                foreach (int i in opcItems.Keys)
+                {
+                    // 没有检测类型，则只要检测信号类型相同
+                    if (opcItems[i].signType == signType && noCheckType == string.Empty)
+                    {
+                        PLC_write(opcItems[i].itemId, opcItems[i].requestedDataType, val);
+                        break;
+                    }
+                    // 信号类型相同，且检测类型不为空,则需要noCheckType为1002
+                    if (opcItems[i].signType == signType && noCheckType != string.Empty && opcItems[i].noCheckType.ToString() == noCheckType)
+                    {
+                        PLC_write(opcItems[i].itemId, opcItems[i].requestedDataType, val);
+                        break;
+                    }
+                    if (opcItems[i].signType == signType && noCheckType != string.Empty && opcItems[i].noCheckType.ToString() == noCheckType)
+                    {
+                        PLC_write(opcItems[i].itemId, opcItems[i].requestedDataType, val);
+                        break;
+                    }
+                }
+            }
         }
     }
     public class LimitData
