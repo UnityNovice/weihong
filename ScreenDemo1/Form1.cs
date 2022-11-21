@@ -72,7 +72,6 @@ namespace ScreenDemo1
                 new System.Windows.Forms.TreeNode[] { 正极辊压treeNode, 负极辊压treeNode });
             System.Windows.Forms.TreeNode 数采配置treeNode = new System.Windows.Forms.TreeNode("数采配置");
             System.Windows.Forms.TreeNode 数采报表treeNode = new System.Windows.Forms.TreeNode("数采报表");
-
             System.Windows.Forms.TreeNode 数采管理treeNode = new System.Windows.Forms.TreeNode("▼数采管理",
                  new System.Windows.Forms.TreeNode[] { 数采配置treeNode, 数采报表treeNode });
             数采管理treeNode.Name = "数采管理";

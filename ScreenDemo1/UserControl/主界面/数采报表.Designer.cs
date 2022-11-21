@@ -500,7 +500,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
         private Sunny.UI.UIButton PageJump;

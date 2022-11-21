@@ -686,7 +686,6 @@ namespace ScreenDemo1
             secondCheckData.ngDataList = ngNoList;
             return secondCheckData;
         }
-
         public void PLC_write(string adress, short datatype, object val)
         {
             if (datatype == 11)
