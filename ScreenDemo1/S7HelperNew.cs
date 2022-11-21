@@ -479,13 +479,13 @@ namespace ScreenDemo1
             microVastProcessProperty.process_no = Form1.mainForm.当前工序;
             microVastProcessProperty.flag = 0;
             microVastProcessProperty.item_no = null;
-            microVastProcessProperty.vou_no = null;
-            microVastProcessProperty.user_id = null;
+         //   microVastProcessProperty.vou_no = Form1.mainForm.;
             microVastProcessProperty.eqpt_loc_id = null;
             microVastProcessProperty.major_state = null;
             microVastProcessProperty.second_state = null;
             microVastProcessProperty.aux_state = null;
             microVastProcessProperty.do_time = DateTime.Now;
+            microVastProcessProperty.user_id = Form1.mainForm.工号;
             foreach (PropertyInfo item in propertyList)
             {
                 string name = item.Name;

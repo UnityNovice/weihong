@@ -28,8 +28,8 @@ namespace ScreenDemo1.Pages.基础信息
     public partial class 数采报表 : UserControl
     {
         public string Tablename = "MicroVastProcessProperty";
-        public string Codename = "";
-        public string Timename = "";
+        public string Codename = "bar_no";
+        public string Timename = "do_time";
         private string Csvpath = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
         IniReadWrite Setting = new IniReadWrite();
         public 数采报表()
@@ -69,7 +69,7 @@ namespace ScreenDemo1.Pages.基础信息
                 DataInfo.Columns["do_time"].ColumnName = "时间";
                 DataInfo.Columns["ok_flag"].ColumnName = "合格标志";
                 DataInfo.Columns["ng_msg"].ColumnName = "NG原因";
-                DataInfo.Columns["user_id"].ColumnName = "操作人员";
+                DataInfo.Columns["user_id"].ColumnName = "操作者工号";
                 DataInfo.Columns.Remove("item_no");
                 DataInfo.Columns.Remove("flag");
                 DataInfo.Columns.Remove("eqpt_loc_id");
@@ -397,7 +397,7 @@ namespace ScreenDemo1.Pages.基础信息
             }
             else
             {
-                sql = $"select  * from {Tablename} where 工序 =  '" + ProcessNoComboBox.Text.ToString() + "' AND " + Codename + "='" + CodeNameTxt.Text.ToString() + "' order by id desc";
+                sql = $"select  * from {Tablename} where process_no =  '" + ProcessNoComboBox.Text.ToString() + "' AND " + Codename + "='" + CodeNameTxt.Text.ToString() + "' order by id desc";
             }
             var dt = sqlSugarServerHelper.db.Ado.GetDataTable(sql);
             DataInfo.Clear();
@@ -419,7 +419,7 @@ namespace ScreenDemo1.Pages.基础信息
             }
             else
             {
-                sql = $"select  * from {Tablename} where 工序 =  '" + ProcessNoComboBox.Text.ToString() + "' AND " + Timename + " between N'" + StartTime.Text.ToString() + "' AND N'" + EndTime.Text.ToString() + "' order by id desc";
+                sql = $"select  * from {Tablename} where process_no =  '" + ProcessNoComboBox.Text.ToString() + "' AND " + Timename + " between N'" + StartTime.Text.ToString() + "' AND N'" + EndTime.Text.ToString() + "' order by id desc";
             }
             var dt = sqlSugarServerHelper.db.Ado.GetDataTable(sql);
             DataInfo.Clear();
@@ -532,6 +532,9 @@ namespace ScreenDemo1.Pages.基础信息
         }
         private void 数采报表_Load(object sender, EventArgs e)
         {
+            StartTime.Text = System.DateTime.Now.ToString("yyyy-MM-dd") + " 00:00:00";
+            EndTime.Text = System.DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:59";
+            //   2022 - 11 - 08 00:00:00
             InitInfo("MicroVastProcessProperty");
         }
     }
