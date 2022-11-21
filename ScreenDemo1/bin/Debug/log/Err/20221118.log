@@ -13,3 +13,23 @@
    在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
 ClientConnectionId:28ed5c5a-3ecf-4ca7-9d7c-6d8e7b0a1361
 Error Number:207,State:1,Class:16
+
+
+发生时间：2022_11_18 16:18:27    System.Data.SqlClient.SqlException (0x80131904): 列名 '负极搅拌' 无效。
+   在 SqlSugar.AdoProvider.ExecuteCommand(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Form1.Form1_Load(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 200
+   在 System.Windows.Forms.Form.OnLoad(EventArgs e)
+   在 System.Windows.Forms.Form.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.Form.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Form.WndProc(Message& m)
+   在 Sunny.UI.UIForm.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:7f90ad41-ab79-45c8-84b0-e8f1d4493c9c
+Error Number:207,State:1,Class:16

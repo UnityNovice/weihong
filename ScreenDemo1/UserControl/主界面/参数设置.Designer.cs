@@ -492,7 +492,6 @@
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
         private Sunny.UI.UITextBox PLC_IPtxt;

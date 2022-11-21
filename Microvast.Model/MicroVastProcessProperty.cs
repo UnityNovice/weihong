@@ -9,7 +9,6 @@ namespace Microvast.Model
 		{
 		}
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
-
         ///<summary>
         ///
         ///</summary>

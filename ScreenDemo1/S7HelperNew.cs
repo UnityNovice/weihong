@@ -15,17 +15,12 @@ using HslCommunication;
 using HslCommunication.Profinet.Siemens;
 using System.Data;
 using System.IO;
-
 using System.Globalization;
-
 using System.Runtime.InteropServices;
-
-
-
 using System.Configuration;
+using System.Reflection;
+using Sunny.UI.Win32;
 //*****************
-
-
 // ScreenDemo1;
 namespace ScreenDemo1
 {
@@ -55,13 +50,13 @@ namespace ScreenDemo1
                 datavalue.value = "";
                 Datavalue.Add(datavalue);
             }
-            if(Datavalue.Count>0)
+            if (Datavalue.Count > 0)
             {
-                if(Form1.mainForm.PLC类型=="1500")
+                if (Form1.mainForm.PLC类型 == "1500")
                 {
                     PLC = new SiemensS7Net(SiemensPLCS.S1500, IP);
                 }
-                else if(Form1.mainForm.PLC类型 == "1200")
+                else if (Form1.mainForm.PLC类型 == "1200")
                 {
                     PLC = new SiemensS7Net(SiemensPLCS.S1200, IP);
                 }
@@ -77,19 +72,12 @@ namespace ScreenDemo1
                 {
                     return false;
                 }
-
-
             }
             else
             {
                 return false;
-
             }
-
         }
-
-
-
         void DataUpdata()
         {
             while (true)
@@ -188,20 +176,18 @@ namespace ScreenDemo1
                             Datavalue[a].p_trig.CLK = result.ToString();
                             Datavalue[a].value = result.ToString();
                         }
-
+                        Thread.Sleep(100);
                     }
                 }
                 catch (Exception ex)
                 {
                     string info = string.Format(ex.Message);
-                   // addLogs(info, 2);
+                    // addLogs(info, 2);
                     //log.Info(info);
                 }
-                Thread.Sleep(600);
+                Thread.Sleep(100);
             }
         }
-
-
         public string ToSingTypeName(int singType)
         {
             string singTypeName = "";
@@ -264,7 +250,7 @@ namespace ScreenDemo1
             {
                 str += item == null ? string.Empty + "," : item.value + ",";
             }
-           // log.Info("opc接收到的值数组:" + str.Substring(0, str.Length - 1));
+            // log.Info("opc接收到的值数组:" + str.Substring(0, str.Length - 1));
             // 接收PLC请求的交互标志型号
             // 不在0 - 100 的范围， 不在则不处理 
             if (signType > 100 || signType < 0) return;
@@ -274,7 +260,7 @@ namespace ScreenDemo1
             {
                 datamsg = datamsg + Datavalue[a].value + ",";
             }
-           // Info(signType, datamsg.Substring(0, datamsg.Length - 1));
+            // Info(signType, datamsg.Substring(0, datamsg.Length - 1));
             // 获取对应信号（0 - 100）的数据，处理数据
             // 1进入数据查询信号(检测上一站信息)  
             // 2离开数据传输信号   
@@ -292,20 +278,17 @@ namespace ScreenDemo1
             var returnList = GetResultRead(signType);
             switch (signType)
             {
-                case 1:
-               
+                case 2:
+                    InsertSQL(returnList);
                     break;
                 default:
                     if (signType >= 60 && signType < 90)
                     {
-                       // new ProcessCurve().UploadThirdEquipmentPath(returnList, signType);
+                        // new ProcessCurve().UploadThirdEquipmentPath(returnList, signType);
                     }
                     break;
-                
             }
         }
-
-
         public Dictionary<string, OpcConnect> GetResultRead(int signType)
         {
             Dictionary<string, OpcConnect> readList = new Dictionary<string, OpcConnect>();
@@ -331,7 +314,7 @@ namespace ScreenDemo1
                     }
                     else//当数据不为浮点数组时，直接将通讯项消息赋值为当前结果值
                     {
-                       opcItems[num].receiveMsg = Convert.ToString(Datavalue[i].value);
+                        opcItems[num].receiveMsg = Convert.ToString(Datavalue[i].value);
                     }
                     //当OPC信号类型=当前信息类型，或者两者都为98时
                     if (opcItems[num].signType == checkSignType ||
@@ -350,206 +333,370 @@ namespace ScreenDemo1
                 return readList;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static string ReadNode(string DataTag)
+        private void InsertSQL(Dictionary<string, OpcConnect> opcConnect)
         {
-            string returnData = "";
-            try
+            string OkFlag = "";
+            string ngMsg = string.Empty;
+            string barNo = string.Empty;
+            string trayNo = string.Empty;
+            string ngFlag = string.Empty;
+            string plcFlag = string.Empty;
+            string ngReason = string.Empty;
+            int flag = 0;
+            Dictionary<string, string> opcDict = new Dictionary<string, string>(); // 检测项数据
+            Dictionary<string, string> checkDict = new Dictionary<string, string>();
+            SecondCheckData ngDataList = new SecondCheckData();
+            List<string> allCheckList = new List<string>();
+            List<string> ngNoList = new List<string>();
+            List<string> okNoList = new List<string>();
+            Dictionary<string, LimitData> limitData = Form1.mainForm.limitDatas; // 查询防错表
+            foreach (string key in opcConnect.Keys)
             {
-                S7Helper s7Helper = S7Helper.CreateInstance();
-                if (DataTag.Contains("WSTRING"))
+                switch (opcConnect[key].noCheckType)
                 {
-                    //取到DB块号
-                    int dbInt = dbInt = int.Parse(MidStrEx(DataTag, "DB", "."));
-                    //取到偏移量地址
-                    int strAdr = int.Parse(MidStrEx(DataTag, "WSTRING", "."));
-                    byte S7StringCount = (byte)s7Helper.plc.Read(DataType.DataBlock, dbInt, strAdr + 2, VarType.Int, 1);
-                    object finalStr = s7Helper.plc.Read(DataType.DataBlock, dbInt, strAdr, VarType.S7String, S7StringCount);
-                    returnData = finalStr.ToString();
+                    case 1002://检查二维码是否有错误
+                        barNo = IsBarNoError(opcConnect[key].receiveMsg);
+                        break;
+                    case 1007://获取工位结果值
+                        if (opcConnect[key].receiveMsg == "1")//结果为1时，工件OK
+                        {
+                            OkFlag = "OK";
+                            // plcFlag = "OK";
+                        }
+                        else if (opcConnect[key].receiveMsg == "2")//结果为2时，工件NG
+                        {
+                            OkFlag = "NG";
+                            // plcFlag = "NG";
+                        }
+                        else//其他情况，工件为OPC返回结果值
+                        {
+                            OkFlag = opcConnect[key].receiveMsg;
+                        }
+                        break;
+                    //case 1008://获取NG原因号
+                    //    int reason = Convert.ToInt16(opcConnect[key].receiveMsg); // 从配置xml读取ng原因
+                    //    ngReason = XmlHelper.ReadNGXML(true, reason).reason;
+                    //    break;
+                    case 1100://获取相关检测项数据
+                        opcDict[opcConnect[key].itemId] = opcConnect[key].receiveMsg;
+                        //  if(opcConnect[key].requestedDataType)
+                        break;
+                    default:
+                        break;
                 }
-                else if (DataTag.Contains(".STRING"))
+            }
+            checkDict = this.ChangeSignToDataNo(Form1.mainForm.limitDatas, opcDict);
+            // 获取综合判定，OK时进行二次检测
+            if (ngFlag == "OK")
+            {
+                foreach (string a in checkDict.Values)
                 {
-                    #region 旧读String
-
-                    #endregion
-                    //取到DB块号
-                    int dbInt = dbInt = int.Parse(MidStrEx(DataTag, "DB", "."));
-                    //取到偏移量地址
-                    int strAdr = int.Parse(MidStrEx(DataTag, "STRING", "."));
-                    byte S7StringCount = (byte)s7Helper.plc.Read(DataType.DataBlock, dbInt, strAdr + 1, VarType.Byte, 1);
-                    object finalStr = s7Helper.plc.Read(DataType.DataBlock, dbInt, strAdr, VarType.S7String, S7StringCount);
-                    returnData = finalStr.ToString();
-                }
-                else if (DataTag.Contains("DATETIME"))
-                {
-                    //取到DB块号
-                    int dbInt = dbInt = int.Parse(MidStrEx(DataTag, "DB", "."));
-                    var spit = DataTag.Split('.');
-                    int strAdr = Convert.ToInt32(DataTag.Replace($"DB{dbInt}.DATETIME", ""));
-
-                    //读取时在地址前加两位偏移
-                    var hehe = s7Helper.plc.Read(DataType.DataBlock, dbInt, strAdr, VarType.DateTime, 1);
-                    returnData = hehe.ToString();
-                }
-                else if (DataTag.Contains("DBW"))
-                {
-                    //读取整数型数据
-                    ushort UpValue = (ushort)s7Helper.plc.Read(DataTag);
-                    returnData = Convert.ToString(UpValue);
-                }
-                else if (DataTag.Contains(".B"))
-                {
-                    //取到DB块号
-                    int dbInt = dbInt = int.Parse(MidStrEx(DataTag, "DB", "."));
-                    //取到偏移量地址
-                    int strAdr = int.Parse(Regex.Match(DataTag, @"\d+$").ToString());
-                    //获取字符串长度
-                    var reservedLength = (byte)s7Helper.plc.Read(DataType.DataBlock, dbInt, strAdr, VarType.Byte, 1);
-                    //将读取数据转为字符串
-                    returnData = Convert.ToString(reservedLength);
-                }
-                else if (DataTag.Contains("DBD"))
-                {
-                    //读取小数型数据
-                    double UpValue = ((uint)s7Helper.plc.Read(DataTag)).ConvertToFloat();
-                    if (Convert.ToString(UpValue).Trim() != "")
+                    if (a == "NG")
                     {
-                        //截取保留小数位长度
-                        returnData = Math.Round(UpValue, 3).ToString();
+                        string info = "PLC数据前后矛盾！";
+                        // Global.addLogs(info, 2);
+                        // log.Info(info);
+                        return;
                     }
                 }
-                else if (DataTag.Contains("DBX"))
+                ngDataList = this.CheckSecond(limitData, checkDict); // 二次检测获取 NG项相关数据
+                flag = ngDataList.flag;
+                ngMsg = ngDataList.ngMsg;
+                List<string> itemList = ngDataList.ngDataList;
+                // 存在检测项漏传或NG则更新综合判定为NG
+                if (itemList.Count > 0)
                 {
-                    //读取Bool值数据
-                    var db1Bool1 = s7Helper.plc.Read(DataTag);
-                    returnData = db1Bool1.ToString();
+                    ngFlag = "NG";
+                }
+                // 所有检测结果项
+                foreach (string key in limitData.Keys)
+                {
+                    if (limitData[key].qualified_item != null)
+                    {
+                        allCheckList.Add(limitData[key].qualified_item);
+                    }
+                }
+                // 根据检测项data_no获取对应的结果项的data_no
+                foreach (string key in limitData.Keys)
+                {
+                    foreach (string data_no in itemList)
+                    {
+                        // limiteSetup表存在对应的结果项关系
+                        if (data_no == key && limitData[key].qualified_item != null)
+                        {
+                            ngNoList.Add(limitData[key].qualified_item);
+                        }
+                    }
+                }
+                okNoList = allCheckList.Except(ngNoList).ToList(); // 合格检测项
+            }
+            else
+            {
+                bool OKDO = false;
+                foreach (string a in checkDict.Values)
+                {
+                    if (a == "NG")
+                    {
+                        OKDO = true;
+                    }
+                }
+                if (!OKDO)
+                {
+                    string info = "PLC数据前后矛盾！";
+                    // Global.addLogs(info, 2);
+                    // log.Info(info);
+                    return;
+                }
+                // PLC传入的综合判定为NG时，也要记录NG原因
+                ngDataList = this.CheckSecond(limitData, checkDict, 1); // 二次检测获取 NG项相关数据
+                flag = ngDataList.flag;
+                ngMsg = ngDataList.ngMsg;
+                List<string> itemList = ngDataList.ngDataList; // ng结果项
+                // 存在检测项漏传或NG则更新综合判定为NG
+                if (itemList.Count > 0)
+                {
+                    ngFlag = "NG";
+                }
+                // 所有检测结果项
+                foreach (string key in limitData.Keys)
+                {
+                    if (limitData[key].qualified_item != null)
+                    {
+                        allCheckList.Add(limitData[key].qualified_item);
+                    }
                 }
             }
-            catch (Exception ex)
+            MicroVastProcessProperty microVastProcessProperty = new MicroVastProcessProperty();
+            Type t = microVastProcessProperty.GetType();
+            PropertyInfo[] propertyList = t.GetProperties(); // 反射获取实体类字段
+            microVastProcessProperty.bar_no = barNo;
+            microVastProcessProperty.ok_flag = ngFlag;
+            microVastProcessProperty.ng_msg = ngMsg;
+            microVastProcessProperty.process_no = Form1.mainForm.当前工序;
+            microVastProcessProperty.flag = 0;
+            microVastProcessProperty.item_no = null;
+            microVastProcessProperty.vou_no = null;
+            microVastProcessProperty.user_id = null;
+            microVastProcessProperty.eqpt_loc_id = null;
+            microVastProcessProperty.major_state = null;
+            microVastProcessProperty.second_state = null;
+            microVastProcessProperty.aux_state = null;
+            microVastProcessProperty.do_time = DateTime.Now;
+            foreach (PropertyInfo item in propertyList)
             {
-                //读取异常
-                //S7Helper._S7Helper = null;
-                return "plc断电了";
+                string name = item.Name;
+                foreach (string key in checkDict.Keys)
+                {
+                    if (name == key) item.SetValue(microVastProcessProperty, checkDict[key]);
+                }
             }
-
-            return returnData;
+            SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
+            int res = sqlSugarServerHelper.db.Insertable(microVastProcessProperty).ExecuteCommand();
+            if (res == 1)
+            {
+            }
+            else
+            {
+            }
         }
-
-        public static bool WriteNode(string DataTag, object value)
+        public static string IsBarNoError(string barNo)
         {
-            try
+            if (barNo.ToUpper().Equals("ERROR") || barNo.ToUpper().Equals("\"ERROR\""))
             {
-                //取到DB块号
-                int dbInt = dbInt = int.Parse(MidStrEx(DataTag, "DB", "."));
-                //取到偏移量地址
-                int strAdr = int.Parse(MidStrEx(DataTag, "STRING", "."));
-                S7Helper s7Helper = S7Helper.CreateInstance();
-                if (DataTag.Contains("STRING"))
-                {
-                    s7Helper.plc.Write(DataType.DataBlock, dbInt, strAdr, GetPLCStringByteArray(value.ToString()));
-                }
-                return true;
+                barNo = string.Format("ERROR_{0}", DateTime.Now.ToString("yyyyMMddHHmmssms"));
             }
-            catch (Exception)
-            {
-                //写入异常
-                //S7Helper._S7Helper = null;
-                return false;
-            }
+            return barNo;
         }
         /// <summary>
-        /// 获取西门子PLC字符串数组--String
+        /// opc解析的检测项由sign_name转为data_no,并根据数据类型转换结果项
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="limitData">防错表相关信息</param>
+        /// <param name="opcDict">opc解析的检测项</param>
         /// <returns></returns>
-        private static byte[] GetPLCStringByteArray(string str)
+        public Dictionary<string, string> ChangeSignToDataNo(Dictionary<string, LimitData> limitData, Dictionary<string, string> opcDict)
         {
-            byte[] value = Encoding.Default.GetBytes(str);
-            byte[] head = new byte[2];
-            head[0] = Convert.ToByte(254);
-            head[1] = Convert.ToByte(str.Length);
-            value = head.Concat(value).ToArray();
-            return value;
-        }
-
-        /// <summary>
-        /// 获取西门子PLC字符串数组--WString
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        private static byte[] GetPLCWStringByteArray(string str)
-        {
-            byte[] value = Encoding.BigEndianUnicode.GetBytes(str);
-            byte[] head = BitConverter.GetBytes((short)508);
-            byte[] length = BitConverter.GetBytes((short)str.Length);
-            Array.Reverse(head);
-            Array.Reverse(length);
-            head = head.Concat(length).ToArray();
-            value = head.Concat(value).ToArray();
-            return value;
-        }
-
-        /// <summary>
-        /// 去指定字符串中间字符
-        /// </summary>
-        /// <param name="sourse">字符串</param>
-        /// <param name="startstr">首字符</param>
-        /// <param name="endstr">尾字符</param>
-        /// <returns></returns>
-        public static string MidStrEx(string sourse, string startstr, string endstr)
-        {
-            string result = string.Empty;
-            int startindex, endindex;
-            try
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            foreach (string key in limitData.Keys)
             {
-                startindex = sourse.IndexOf(startstr);
-                if (startindex == -1)
+                foreach (string check in opcDict.Keys)
                 {
-                    return result;
+                    if (check == limitData[key].sign_name)
+                    //      if (check == Global.limitData[key].sign_name)
+                    {
+                        string dataNo = limitData[key].data_no; // 检测项data_no
+                        int dataType = limitData[key].data_type; // 数据类型 1：OK/NG类型；2：数值类型；3：字符类型 4：正/反类型 5：有/无类型
+                        string val = opcDict[check]; // 检测项的值
+                                                     //  log.Info(check + ":" + val);
+                                                     // 检测结果项类型为1 (1、OK;2、NG)
+                        if (dataType == 1 && val == "1")
+                        {
+                            val = "OK";
+                        }
+                        else if (dataType == 1 && val == "2")
+                        {
+                            val = "NG";
+                        }
+                        // 检测结果项类型为4 (1、正;2、反)
+                        if (dataType == 4 && val == "1")
+                        {
+                            val = "正";
+                        }
+                        else if (dataType == 4 && val == "2")
+                        {
+                            val = "反";
+                        }
+                        // 检测结果项类型为5 (1、有;2、无)
+                        if (dataType == 5 && val == "1")
+                        {
+                            val = "有";
+                        }
+                        else if (dataType == 5 && val == "2")
+                        {
+                            val = "无";
+                        }
+                        //检测结果项类型为2（数值类型）
+                        if (dataType == 2 && !string.IsNullOrWhiteSpace(limitData[key].data_unit))
+                        {
+                            int decimalType = limitData[key].data_unit.Count(item => item == '0');
+                            string str = decimalType == 0 ? string.Empty : string.Format("f{0}", decimalType.ToString());
+                            try
+                            {
+                                val = decimal.Round(decimal.Parse(val, System.Globalization.NumberStyles.Float), decimalType).ToString(str);
+                            }
+                            catch
+                            {
+                                //log.Warn("检测数据非数值，无法保留小数位数");
+                            }
+                        }
+                        else if (dataType == 2 && string.IsNullOrWhiteSpace(limitData[key].data_unit) && limitData[key].length_check == "否")
+                        {
+                            // 检测类型为2，length_check为否，且没有设置data_unit的默认保留两位小数
+                            try
+                            {
+                                val = decimal.Round(decimal.Parse(val, System.Globalization.NumberStyles.Float), 2).ToString("f2");
+                            }
+                            catch
+                            {
+                                // log.Warn("检测数据非数值，无法保留小数位数");
+                            }
+                        }
+                        result[dataNo] = val;
+                        break;
+                    }
                 }
-                string tmpstr = sourse.Substring(startindex + startstr.Length);
-                endindex = tmpstr.IndexOf(endstr);
-                if (endindex == -1)
-                {
-                    return result;
-                }
-                result = tmpstr.Remove(endindex);
-
-            }
-            catch (Exception)
-            {
-
             }
             return result;
         }
-
-
-
-      
-
-
-
+        /// <summary>
+        /// 数据漏传和传错(二次防错)
+        /// </summary>
+        /// <param name="checkList">上位机解析的plc检测项数据</param>
+        /// <returns>NG的检测项序号和NG原因</returns>
+        public SecondCheckData CheckSecond(Dictionary<string, LimitData> limitData, Dictionary<string, string> checkList, int status = 0)
+        {
+            SecondCheckData secondCheckData = new SecondCheckData();
+            List<string> ngNoList = new List<string>();
+            string ngMsg = string.Empty;
+            string reasonMsg = status == 1 ? "_PLC;" : "_上位机;";
+            // 1.数据漏传检测
+            foreach (string key in limitData.Keys)
+            {
+                int existFlag = 0; // 存在标识 0、不存在 1、存在
+                foreach (string dataNo in checkList.Keys)
+                {
+                    // 检测项的值为null或为空,则数据漏传
+                    if (key == dataNo)
+                    {
+                        existFlag = 1;
+                        // 检测项为空或null
+                        if (checkList[dataNo] == null || checkList[dataNo] == string.Empty)
+                        {
+                            ngNoList.Add(key); // 添加NG检测项
+                            ngMsg += limitData[key].data_name + reasonMsg; // 添加NG原因信息
+                        }
+                    }
+                }
+                // 检测项缺失漏传
+                if (existFlag == 0)
+                {
+                    ngNoList.Add(key); // 添加NG检测项
+                    ngMsg += limitData[key].data_name + reasonMsg; // 添加NG原因信息
+                }
+            }
+            // 如果数据存在漏传，则直接返回漏传的检测项和NG原因
+            if (ngNoList.Count > 0 && status == 0)
+            {
+                secondCheckData.flag = 1;
+                secondCheckData.ngMsg = ngMsg == string.Empty ? ngMsg : ngMsg.Substring(0, ngMsg.Length - 1);
+                secondCheckData.ngDataList = ngNoList;
+                return secondCheckData;
+            }
+            if (status == 0) // 只有plc传来的综合判定为OK时才做检测项校验
+            {
+                // 2.如果没有漏传,判定是否需要检测字符串长度
+                foreach (string key in checkList.Keys)
+                {
+                    // 需要检测长度
+                    if (limitData[key].length_check == "是")
+                    {
+                        // 防错表需要检测长度不等于plc解析数据的长度
+                        if (limitData[key].lower_limit != checkList[key].Length)
+                        {
+                            ngNoList.Add(key); // 添加NG检测项
+                            ngMsg += limitData[key].data_name + reasonMsg; // 添加NG原因信息
+                        }
+                    }
+                    else if (limitData[key].length_check == "否")
+                    { // 需要检测值的范围
+                        try
+                        {
+                            double val = Convert.ToDouble(checkList[key]);
+                            if (val < limitData[key].lower_limit || val > limitData[key].upper_limit)
+                            {
+                                ngNoList.Add(key); // 添加NG检测项
+                                ngMsg += limitData[key].data_name + reasonMsg; // 添加NG原因信息
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            //log.Error("检测值类型转换失败:" + ex.Message, ex);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (string key in checkList.Keys)
+                {
+                    // plc传来的检测项NG记录NG原因
+                    if (checkList[key] == "NG")
+                    {
+                        ngNoList.Add(key); // 添加NG结果项
+                        ngMsg += limitData[key].data_name + reasonMsg; // 添加NG原因信息
+                    }
+                }
+            }
+            secondCheckData.flag = 2;
+            secondCheckData.ngMsg = ngMsg == string.Empty ? ngMsg : ngMsg.Substring(0, ngMsg.Length - 1);
+            secondCheckData.ngDataList = ngNoList;
+            return secondCheckData;
+        }
+    }
+    public class LimitData
+    {
+        public int id { get; set; }
+        public string process_no { get; set; }
+        public string data_no { get; set; }
+        public double? upper_limit { get; set; }
+        public double? lower_limit { get; set; }
+        public string qualified_item { get; set; }
+        public string length_check { get; set; }
+        public string sign_name { get; set; }
+        public string data_name { get; set; }
+        public int data_type { get; set; }
+        public string data_desc { get; set; }
+        public string data_value { get; set; }
+        public string data_unit { get; set; }
     }
     public class DataValue
     {
@@ -584,5 +731,11 @@ namespace ScreenDemo1
         /// 非检测项标识
         /// </summary>
         public int noCheckType { get; set; }
+    }
+    public class SecondCheckData
+    {
+        public int flag { get; set; } // 1、数据漏传NG 2、数据校验NG
+        public string ngMsg { get; set; }
+        public List<string> ngDataList { get; set; }
     }
 }

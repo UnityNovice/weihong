@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
 namespace Microvast.Common.Utils
 {
     public class S7Helper
@@ -36,7 +35,6 @@ namespace Microvast.Common.Utils
             plc = new Plc(CpuType.S71200, plcip, 0, 1);
             plc.Open();
         }
-
         public static string ReadNode(string DataTag)
         {
             string returnData = "";
@@ -56,7 +54,6 @@ namespace Microvast.Common.Utils
                 else if (DataTag.Contains(".STRING"))
                 {
                     #region 旧读String
-
                     #endregion
                     //取到DB块号
                     int dbInt = dbInt = int.Parse(MidStrEx(DataTag, "DB", "."));
@@ -72,7 +69,6 @@ namespace Microvast.Common.Utils
                     int dbInt = dbInt = int.Parse(MidStrEx(DataTag, "DB", "."));
                     var spit = DataTag.Split('.');
                     int strAdr = Convert.ToInt32(DataTag.Replace($"DB{dbInt}.DATETIME", ""));
-
                     //读取时在地址前加两位偏移
                     var hehe = s7Helper.plc.Read(DataType.DataBlock, dbInt, strAdr, VarType.DateTime, 1);
                     returnData = hehe.ToString();
@@ -117,10 +113,8 @@ namespace Microvast.Common.Utils
                 S7Helper._S7Helper = null;
                 return "plc断电了";
             }
-
             return returnData;
         }
-
         public static bool WriteNode(string DataTag, object value)
         {
             try
@@ -157,7 +151,6 @@ namespace Microvast.Common.Utils
             value = head.Concat(value).ToArray();
             return value;
         }
-
         /// <summary>
         /// 获取西门子PLC字符串数组--WString
         /// </summary>
@@ -174,7 +167,6 @@ namespace Microvast.Common.Utils
             value = head.Concat(value).ToArray();
             return value;
         }
-
         /// <summary>
         /// 去指定字符串中间字符
         /// </summary>
@@ -200,16 +192,11 @@ namespace Microvast.Common.Utils
                     return result;
                 }
                 result = tmpstr.Remove(endindex);
-
             }
             catch (Exception)
             {
-
             }
             return result;
         }
-
-
     }
-
 }

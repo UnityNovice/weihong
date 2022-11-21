@@ -45,6 +45,7 @@ namespace ScreenDemo1
         public string 登录名 = "";
         public string 工号 = "";
         public List<DataRefence> dataRefenceList = new List<DataRefence>();
+        public Dictionary<string, LimitData> limitDatas = new Dictionary<string, LimitData>();
         public string PLC类型 = "";
         S7HelperNew plc = new S7HelperNew();
         #endregion
@@ -186,9 +187,23 @@ namespace ScreenDemo1
             PLC类型 = Setting.IniReadValue("Setting", "PLC类型");
             InitMenu();
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
-
             dataRefenceList = sqlSugarServerHelper.db.Queryable<DataRefence>().Where(a => a.process_no == 当前工序).ToList();
-           if(!plc.PLCCon(Setting.IniReadValue("Setting", "PLC_IP"))) MessageBox.Show("plc未链接！");
+            foreach (DataRefence dataRefence in dataRefenceList)
+            {
+                if (dataRefence.data_no != "" && dataRefence.data_no != null)
+                {
+                    LimitData limitData = new LimitData();
+                    limitData.process_no = dataRefence.process_no;
+                    limitData.data_no = dataRefence.data_no;
+                    if (dataRefence.data_type.ToString() != null && dataRefence.data_type.ToString() != "")
+                        limitData.data_type = int.Parse(dataRefence.data_type.ToString());
+                    limitData.data_name = dataRefence.data_name;
+                    limitData.sign_name = dataRefence.sign_name;
+                    limitData.length_check = "";
+                    limitDatas.Add(limitData.data_no, limitData);
+                }
+            }
+            if (!plc.PLCCon(Setting.IniReadValue("Setting", "PLC_IP"))) MessageBox.Show("plc未链接！");
             switch (当前工序)
             {
                 case "正极搅拌": this.uiPanel1.Controls.Add(搅拌正极主界面); break;
