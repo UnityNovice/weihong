@@ -273,3 +273,18 @@ English Message : Connection open error . 在与 SQL Server 建立连接时出�
    在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
    在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
    在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_21 13:10:00    System.Data.SqlClient.SqlException (0x80131904): 列名 '工序' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.Qurey(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 612
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:42deda35-462c-4264-b0b5-a59a5436ee8e
+Error Number:207,State:1,Class:16
