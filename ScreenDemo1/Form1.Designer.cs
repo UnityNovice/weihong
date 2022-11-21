@@ -33,10 +33,10 @@
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.Menu1 = new Sunny.UI.UINavMenu();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uiLabel2 = new Sunny.UI.UILabel();
-            this.Permissions = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.UserNum = new Sunny.UI.UILabel();
+            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.Permissions = new Sunny.UI.UILabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ScreenDemo1.Properties.Resources.英文组合Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(259, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,34 +169,6 @@
             this.panel1.Size = new System.Drawing.Size(1913, 82);
             this.panel1.TabIndex = 9;
             // 
-            // uiLabel2
-            // 
-            this.uiLabel2.AutoSize = true;
-            this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLabel2.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel2.Location = new System.Drawing.Point(1691, 53);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(58, 21);
-            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLabel2.TabIndex = 7;
-            this.uiLabel2.Text = "角色：";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiLabel2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // Permissions
-            // 
-            this.Permissions.AutoSize = true;
-            this.Permissions.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Permissions.ForeColor = System.Drawing.Color.Black;
-            this.Permissions.Location = new System.Drawing.Point(1774, 53);
-            this.Permissions.Name = "Permissions";
-            this.Permissions.Size = new System.Drawing.Size(58, 21);
-            this.Permissions.Style = Sunny.UI.UIStyle.Custom;
-            this.Permissions.TabIndex = 3;
-            this.Permissions.Text = "管理员";
-            this.Permissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Permissions.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
             // uiLabel3
             // 
             this.uiLabel3.AutoSize = true;
@@ -225,6 +197,34 @@
             this.UserNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.UserNum.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             // 
+            // uiLabel2
+            // 
+            this.uiLabel2.AutoSize = true;
+            this.uiLabel2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLabel2.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel2.Location = new System.Drawing.Point(1691, 53);
+            this.uiLabel2.Name = "uiLabel2";
+            this.uiLabel2.Size = new System.Drawing.Size(58, 21);
+            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel2.TabIndex = 7;
+            this.uiLabel2.Text = "角色：";
+            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiLabel2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // Permissions
+            // 
+            this.Permissions.AutoSize = true;
+            this.Permissions.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Permissions.ForeColor = System.Drawing.Color.Black;
+            this.Permissions.Location = new System.Drawing.Point(1774, 53);
+            this.Permissions.Name = "Permissions";
+            this.Permissions.Size = new System.Drawing.Size(58, 21);
+            this.Permissions.Style = Sunny.UI.UIStyle.Custom;
+            this.Permissions.TabIndex = 3;
+            this.Permissions.Text = "管理员";
+            this.Permissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Permissions.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -248,6 +248,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+
         }
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;

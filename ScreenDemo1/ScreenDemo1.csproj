@@ -167,6 +167,12 @@
     <Compile Include="UserControl\主界面\参数设置.Designer.cs">
       <DependentUpon>参数设置.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\主界面\数采报表.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\主界面\数采报表.Designer.cs">
+      <DependentUpon>数采报表.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\基础信息\用户管理.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\主界面\参数设置.resx">
       <DependentUpon>参数设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\主界面\数采报表.resx">
+      <DependentUpon>数采报表.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\基础信息\用户管理.resx">
       <DependentUpon>用户管理.cs</DependentUpon>

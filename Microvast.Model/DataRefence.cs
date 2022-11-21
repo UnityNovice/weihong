@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using SqlSugar;		
 namespace Microvast.Model
 {
-	public class DataRefence
+	public class huzhou_DataRefence
 	{
-		public DataRefence()
+		public huzhou_DataRefence()
 		{
 		}
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]

@@ -36,7 +36,7 @@ namespace ScreenDemo1
         private 辊压正极主界面 辊压正极主界面 = new 辊压正极主界面();
         private 辊压负极主界面 辊压负极主界面 = new 辊压负极主界面();
         private 参数设置 参数设置 = new 参数设置();
-        private 用户管理 用户管理 = new 用户管理();
+        private 数采报表 数采报表 = new 数采报表();
         public string 当前工序 = string.Empty;
         IniReadWrite Setting = new IniReadWrite();
         public int 权限等级 = 0;
@@ -44,7 +44,7 @@ namespace ScreenDemo1
         public string 角色 = "";
         public string 登录名 = "";
         public string 工号 = "";
-        public List<DataRefence> dataRefenceList = new List<DataRefence>();
+        public List<huzhou_DataRefence> dataRefenceList = new List<huzhou_DataRefence>();
         public Dictionary<string, LimitData> limitDatas = new Dictionary<string, LimitData>();
         public string PLC类型 = "";
         S7HelperNew plc = new S7HelperNew();
@@ -70,10 +70,14 @@ namespace ScreenDemo1
             System.Windows.Forms.TreeNode 负极辊压treeNode = new System.Windows.Forms.TreeNode("负极辊压");
             System.Windows.Forms.TreeNode 辊压管理treeNode = new System.Windows.Forms.TreeNode("▼辊压管理",
                 new System.Windows.Forms.TreeNode[] { 正极辊压treeNode, 负极辊压treeNode });
-            System.Windows.Forms.TreeNode 数采管理treeNode = new System.Windows.Forms.TreeNode("▼数采管理");
+            System.Windows.Forms.TreeNode 数采配置treeNode = new System.Windows.Forms.TreeNode("数采配置");
+            System.Windows.Forms.TreeNode 数采报表treeNode = new System.Windows.Forms.TreeNode("数采报表");
+
+            System.Windows.Forms.TreeNode 数采管理treeNode = new System.Windows.Forms.TreeNode("▼数采管理",
+                 new System.Windows.Forms.TreeNode[] { 数采配置treeNode, 数采报表treeNode });
             数采管理treeNode.Name = "数采管理";
             System.Windows.Forms.TreeNode 参数设置treeNode = new System.Windows.Forms.TreeNode("▼参数设置");
-            数采管理treeNode.Name = "参数设置";
+            参数设置treeNode.Name = "参数设置";
             #endregion
             #region 报表管理
             System.Windows.Forms.TreeNode 过站数据报表treeNode = new System.Windows.Forms.TreeNode("过站数据报表");
@@ -187,8 +191,8 @@ namespace ScreenDemo1
             PLC类型 = Setting.IniReadValue("Setting", "PLC类型");
             InitMenu();
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
-            dataRefenceList = sqlSugarServerHelper.db.Queryable<DataRefence>().Where(a => a.process_no == 当前工序).ToList();
-            foreach (DataRefence dataRefence in dataRefenceList)
+            dataRefenceList = sqlSugarServerHelper.db.Queryable<huzhou_DataRefence>().Where(a => a.process_no == 当前工序).ToList();
+            foreach (huzhou_DataRefence dataRefence in dataRefenceList)
             {
                 if (dataRefence.data_no != "" && dataRefence.data_no != null)
                 {
@@ -259,6 +263,8 @@ namespace ScreenDemo1
                 case "基础物料信息表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("基础物料信息表", "", "")); break;
                 case "料架物料信息": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("料架物料信息", "", "")); break;
                 case "参数设置": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(参数设置); break;
+                case "数采配置": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(new 通用模板("DataRefence", "", "")); break;
+                case "数采报表": if (PermissionsDo(e.Node.FullPath.ToString())) this.uiPanel1.Controls.Add(数采报表); break;
                 default:; break;
             }
             //MessageBox.Show(e.Node.Text);

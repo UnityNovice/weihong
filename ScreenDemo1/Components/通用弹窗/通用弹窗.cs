@@ -79,7 +79,7 @@ namespace ScreenDemo1.Components.通用弹窗
                         text_val.Name = idx.ToString() + "" + data["DataName"].ToString();
                         //  text_val.Text = data["DefaultData"].ToString();
                         itemPanel.Controls.Add(text_val);
-                        text_val.Location = new Point(itemPanel.Width / 2 - itemPanel.Width / 3, 0 + (labeli - 1) * 35);
+                        text_val.Location = new Point(itemPanel.Width / 2 - itemPanel.Width / 3+15, 0 + (labeli - 1) * 35);
                         text_val.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                         text_val.Size = new System.Drawing.Size(230, 35);
                         text_val.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -179,7 +179,7 @@ namespace ScreenDemo1.Components.通用弹窗
                         ComboBoxtext_val.Text = data["DefaultData"].ToString();
                         ComboBoxtext_val.SelectedIndex = ComboBoxtext_val.Items.IndexOf(ComboboxValue[0]);
                         itemPanel.Controls.Add(ComboBoxtext_val);
-                        ComboBoxtext_val.Location = new Point(itemPanel.Width / 2 - itemPanel.Width / 3, 0 + (labeli - 1) * 35);
+                        ComboBoxtext_val.Location = new Point(itemPanel.Width / 2 - itemPanel.Width / 3 + 15, 0 + (labeli - 1) * 35);
                         ComboBoxtext_val.Size = new System.Drawing.Size(230, 35);
                         ComboBoxtext_val.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
                         if (FormType == 2)
@@ -196,7 +196,7 @@ namespace ScreenDemo1.Components.通用弹窗
                         Sunny.UI.UIDatetimePicker Time = new UIDatetimePicker();
                         Time.FillColor = System.Drawing.Color.White;
                         Time.Font = new System.Drawing.Font("微软雅黑", 12F);
-                        Time.Location = new Point(itemPanel.Width / 2 - itemPanel.Width / 3, 0 + (labeli - 1) * 35);
+                        Time.Location = new Point(itemPanel.Width / 2 - itemPanel.Width / 3+15, 0 + (labeli - 1) * 35);
                         Time.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
                         Time.MaxLength = 19;
                         Time.MinimumSize = new System.Drawing.Size(63, 0);

@@ -58,3 +58,189 @@
    在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
    在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
    在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_21 09:47:31    System.Data.SqlClient.SqlException (0x80131904): 对象名 'DataRefence' 无效。
+   在 SqlSugar.AdoProvider.GetDataReader(String sql, SugarParameter[] parameters)
+   在 SqlSugar.QueryableProvider`1.GetData[TResult](KeyValuePair`2 sqlObj)
+   在 SqlSugar.QueryableProvider`1._ToList[TResult]()
+   在 SqlSugar.QueryableProvider`1.ToList()
+   在 ScreenDemo1.Form1.Form1_Load(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 194
+   在 System.Windows.Forms.Form.OnLoad(EventArgs e)
+   在 System.Windows.Forms.Form.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.Form.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Form.WndProc(Message& m)
+   在 Sunny.UI.UIForm.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:e07eabad-3ee1-4425-bd98-1fb00efdd7e3
+Error Number:208,State:1,Class:16
+
+
+发生时间：2022_11_21 10:03:35    System.Data.SqlClient.SqlException (0x80131904): 对象名 'huzhou_数采报表' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 432
+   在 ScreenDemo1.Pages.基础信息.通用模板..ctor(String TempTablename, String TempCodename, String TempTimename) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 186
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 267
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:5dd8f4c6-f485-4ea5-be3f-38b05a05e471
+Error Number:208,State:1,Class:16
+
+
+发生时间：2022_11_21 10:28:45    System.Data.SqlClient.SqlException (0x80131904): 对象名 'huzhou_数采报表' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 432
+   在 ScreenDemo1.Pages.基础信息.通用模板..ctor(String TempTablename, String TempCodename, String TempTimename) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 186
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 267
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:244d9f60-4c02-43fb-bb2c-bd4115f9bd86
+Error Number:208,State:1,Class:16
+
+
+发生时间：2022_11_21 10:31:23    System.Data.SqlClient.SqlException (0x80131904): “=”附近有语法错误。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.数采报表.CodeQureybtn_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 404
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:92992e8a-bc37-432e-ba30-d4d85c213196
+Error Number:102,State:1,Class:15
+
+
+发生时间：2022_11_21 10:40:17    System.ArgumentException: 当 ColumnName 作为 DataTable 的一部分时是需要的。
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 ScreenDemo1.Pages.基础信息.数采报表.DealColumnName() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 74
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitDataSet() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 279
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 344
+   在 ScreenDemo1.Pages.基础信息.数采报表..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 40
+   在 ScreenDemo1.Form1..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 39
+   在 Test.登录.登录按钮_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\登录.cs:行号 119
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_21 10:41:09    System.ArgumentException: 当 ColumnName 作为 DataTable 的一部分时是需要的。
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 ScreenDemo1.Pages.基础信息.数采报表.DealColumnName() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 74
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitDataSet() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 279
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 344
+   在 ScreenDemo1.Pages.基础信息.数采报表..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 40
+   在 ScreenDemo1.Form1..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 39
+   在 Test.登录.登录按钮_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\登录.cs:行号 119
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_21 10:41:33    System.ArgumentException: 当 ColumnName 作为 DataTable 的一部分时是需要的。
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 ScreenDemo1.Pages.基础信息.数采报表.DealColumnName() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 74
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitDataSet() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 279
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 344
+   在 ScreenDemo1.Pages.基础信息.数采报表..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 40
+   在 ScreenDemo1.Form1..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 39
+   在 Test.登录.登录按钮_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\登录.cs:行号 119
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_21 10:42:02    System.ArgumentException: 当 ColumnName 作为 DataTable 的一部分时是需要的。
+   在 System.Data.DataColumn.set_ColumnName(String value)
+   在 ScreenDemo1.Pages.基础信息.数采报表.DealColumnName() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 74
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitDataSet() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 279
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 344
+   在 ScreenDemo1.Pages.基础信息.数采报表..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 40
+   在 ScreenDemo1.Form1..ctor() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 39
+   在 Test.登录.登录按钮_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\登录.cs:行号 119
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_21 10:50:48    System.ArgumentException: 列“item_no”不属于表 。
+   在 System.Data.DataColumnCollection.Remove(String name)
+   在 ScreenDemo1.Pages.基础信息.数采报表.DealColumnName() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 80
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitDataSet() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 291
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 356
+   在 ScreenDemo1.Pages.基础信息.数采报表.数采报表_Load(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 553
+   在 System.Windows.Forms.UserControl.OnLoad(EventArgs e)
+   在 System.Windows.Forms.UserControl.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 267
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_21 10:52:49    System.ArgumentException: 列“vou_no”不属于表 Table。
+   在 System.Data.DataColumnCollection.Remove(String name)
+   在 ScreenDemo1.Pages.基础信息.数采报表.DealColumnName() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 81
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitDataSet() 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 291
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 356
+   在 ScreenDemo1.Pages.基础信息.数采报表.数采报表_Load(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 553
+   在 System.Windows.Forms.UserControl.OnLoad(EventArgs e)
+   在 System.Windows.Forms.UserControl.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 267
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
