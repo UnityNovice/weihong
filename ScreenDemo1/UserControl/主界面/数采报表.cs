@@ -536,6 +536,35 @@ namespace ScreenDemo1.Pages.基础信息
             EndTime.Text = System.DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:59";
             //   2022 - 11 - 08 00:00:00
             InitInfo("MicroVastProcessProperty");
+            DatabaseSource.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgvRowPrePaint);
+        }
+        private void dgvRowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex < DatabaseSource.Rows.Count)
+            {
+                DataGridViewRow dgrSingle = DatabaseSource.Rows[e.RowIndex];
+                try
+                {
+                    /* 2021/06/11 新增 wu.mingxuan 所有NG项全标红 strat */
+                    foreach (DataGridViewCell item in dgrSingle.Cells)
+                    {
+                        if (item.Value != null && item.Value.ToString() == "NG")
+                        {
+                            item.Style.ForeColor = Color.Red;
+                        }
+                    }
+                    /* 2021/06/11 新增 wu.mingxuan 所有NG项全标红 end */
+                    if (dgrSingle.Cells["合格标志"].Value.ToString().Contains("NG"))
+                    {
+                        dgrSingle.DefaultCellStyle.BackColor = Color.Yellow;
+                        dgrSingle.Cells["合格标志"].Style.ForeColor = Color.Red;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
