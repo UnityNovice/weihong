@@ -1,0 +1,96 @@
+
+
+发生时间：2022_11_22 08:23:09    System.Data.SqlClient.SqlException (0x80131904): 列名 '工序' 无效。
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.Qurey(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 612
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+ClientConnectionId:307021ef-f80c-488d-a900-cc0bdeb11659
+Error Number:207,State:1,Class:16
+
+
+发生时间：2022_11_22 08:53:06    SqlSugar.SqlSugarException: 中文提示 :  连接数据库过程中发生错误，检查服务器是否正常连接字符串是否正确，错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接).
+English Message : Connection open error . 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.通用模板.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 432
+   在 ScreenDemo1.Pages.基础信息.通用模板..ctor(String TempTablename, String TempCodename, String TempTimename) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 186
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 265
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_22 09:39:23    System.ArgumentException: 列“sign_name”不属于表 Table。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 ScreenDemo1.Components.通用弹窗.通用弹窗..ctor(String Name, Int32 id, Int32 Formtype) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Components\通用弹窗\通用弹窗.cs:行号 86
+   在 ScreenDemo1.Pages.基础信息.通用模板.修改_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 486
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_22 09:41:07    System.ArgumentException: 列“sign_name”不属于表 Table。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 ScreenDemo1.Components.通用弹窗.通用弹窗..ctor(String Name, Int32 id, Int32 Formtype) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Components\通用弹窗\通用弹窗.cs:行号 86
+   在 ScreenDemo1.Pages.基础信息.通用模板.修改_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 486
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_22 09:41:31    System.ArgumentException: 列“sign_name”不属于表 Table。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 ScreenDemo1.Components.通用弹窗.通用弹窗..ctor(String Name, Int32 id, Int32 Formtype) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Components\通用弹窗\通用弹窗.cs:行号 86
+   在 ScreenDemo1.Pages.基础信息.通用模板.修改_Click(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Pages\基础信息\通用模板.cs:行号 486
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 Sunny.UI.UIButton.OnClick(EventArgs e)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+发生时间：2022_11_22 09:49:37    SqlSugar.SqlSugarException: 中文提示 :  连接数据库过程中发生错误，检查服务器是否正常连接字符串是否正确，错误信息：在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接).
+English Message : Connection open error . 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+   在 SqlSugar.AdoProvider.GetDataSetAll(String sql, SugarParameter[] parameters)
+   在 SqlSugar.AdoProvider.GetDataTable(String sql, SugarParameter[] parameters)
+   在 ScreenDemo1.Pages.基础信息.数采报表.InitInfo(String name) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 333
+   在 ScreenDemo1.Pages.基础信息.数采报表.数采报表_Load(Object sender, EventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\UserControl\主界面\数采报表.cs:行号 538
+   在 System.Windows.Forms.UserControl.OnLoad(EventArgs e)
+   在 System.Windows.Forms.UserControl.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   在 ScreenDemo1.Form1.uiNavMenu1_NodeMouseClick(Object sender, TreeNodeMouseClickEventArgs e) 位置 C:\Users\2200214\source\repos\weihong\ScreenDemo1\Form1.cs:行号 266
+   在 System.Windows.Forms.TreeView.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 Sunny.UI.UINavMenu.OnNodeMouseClick(TreeNodeMouseClickEventArgs e)
+   在 System.Windows.Forms.TreeView.WmNotify(Message& m)
+   在 System.Windows.Forms.TreeView.WndProc(Message& m)
+   在 Sunny.UI.UINavMenu.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)

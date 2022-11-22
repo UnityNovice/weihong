@@ -38,15 +38,15 @@ namespace ScreenDemo1
             {
                 OpcConnect opcConnect = new OpcConnect();//建立OPC连接
                 opcConnect.clientHandle = i;
-                opcConnect.itemId = Form1.mainForm.dataRefenceList[i].sign_name;//将itemid设置成表中的DB地址
-                opcConnect.requestedDataType = short.Parse(Convert.ToString(Form1.mainForm.dataRefenceList[i].requested_datatype));
-                opcConnect.signType = Convert.ToInt32(Form1.mainForm.dataRefenceList[i].sign_type);
-                opcConnect.noCheckType = Convert.ToInt32(Form1.mainForm.dataRefenceList[i].no_checktype);
+                opcConnect.itemId = Form1.mainForm.dataRefenceList[i].PLC地址;//将itemid设置成表中的DB地址
+                opcConnect.requestedDataType = short.Parse(Convert.ToString(Form1.mainForm.dataRefenceList[i].要求数据类型));
+                opcConnect.signType = Convert.ToInt32(Form1.mainForm.dataRefenceList[i].功能码);
+                opcConnect.noCheckType = Convert.ToInt32(Form1.mainForm.dataRefenceList[i].检查类型);
                 opcItems.Add(i, opcConnect);//插入一个OPC连接
                 DataValue datavalue = new DataValue();
                 datavalue.p_trig = new P_TRIG();
-                datavalue.signtype = Convert.ToInt32(Form1.mainForm.dataRefenceList[i].sign_type);
-                datavalue.datatype = short.Parse(Convert.ToString(Form1.mainForm.dataRefenceList[i].requested_datatype));
+                datavalue.signtype = Convert.ToInt32(Form1.mainForm.dataRefenceList[i].功能码);
+                datavalue.datatype = short.Parse(Convert.ToString(Form1.mainForm.dataRefenceList[i].要求数据类型));
                 datavalue.value = "";
                 Datavalue.Add(datavalue);
             }
@@ -479,7 +479,7 @@ namespace ScreenDemo1
             microVastProcessProperty.process_no = Form1.mainForm.当前工序;
             microVastProcessProperty.flag = 0;
             microVastProcessProperty.item_no = null;
-         //   microVastProcessProperty.vou_no = Form1.mainForm.;
+            //   microVastProcessProperty.vou_no = Form1.mainForm.;
             microVastProcessProperty.eqpt_loc_id = null;
             microVastProcessProperty.major_state = null;
             microVastProcessProperty.second_state = null;
@@ -513,7 +513,7 @@ namespace ScreenDemo1
             return barNo;
         }
         /// <summary>
-        /// opc解析的检测项由sign_name转为data_no,并根据数据类型转换结果项
+        /// opc解析的检测项.PLC地址转为data_no,并根据数据类型转换结果项
         /// </summary>
         /// <param name="limitData">防错表相关信息</param>
         /// <param name="opcDict">opc解析的检测项</param>
@@ -525,8 +525,8 @@ namespace ScreenDemo1
             {
                 foreach (string check in opcDict.Keys)
                 {
-                    if (check == limitData[key].sign_name)
-                    //      if (check == Global.limitData[key].sign_name)
+                    if (check == limitData[key].PLC地址)
+                    //      if (check == Global.limitData[key].PLC地址)
                     {
                         string dataNo = limitData[key].data_no; // 检测项data_no
                         int dataType = limitData[key].data_type; // 数据类型 1：OK/NG类型；2：数值类型；3：字符类型 4：正/反类型 5：有/无类型
@@ -702,7 +702,7 @@ namespace ScreenDemo1
             {
             }
         }
-        public  void write(int signType, object val, string noCheckType = "")
+        public void write(int signType, object val, string noCheckType = "")
         {
             if (opcItems != null && opcItems.Count != 0)
             {
@@ -738,7 +738,7 @@ namespace ScreenDemo1
         public double? lower_limit { get; set; }
         public string qualified_item { get; set; }
         public string length_check { get; set; }
-        public string sign_name { get; set; }
+        public string PLC地址 { get; set; }
         public string data_name { get; set; }
         public int data_type { get; set; }
         public string data_desc { get; set; }
@@ -755,7 +755,7 @@ namespace ScreenDemo1
     public class OpcConnect
     {
         /// <summary>
-        /// OPC中的itemId(sign_name)
+        /// OPC中的itemId.PLC地址)
         /// </summary>
         public string itemId { get; set; }
         /// <summary>

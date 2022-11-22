@@ -190,18 +190,18 @@ namespace ScreenDemo1
             PLC类型 = Setting.IniReadValue("Setting", "PLC类型");
             InitMenu();
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
-            dataRefenceList = sqlSugarServerHelper.db.Queryable<huzhou_DataRefence>().Where(a => a.process_no == 当前工序).ToList();
+            dataRefenceList = sqlSugarServerHelper.db.Queryable<huzhou_DataRefence>().Where(a => a.工序 == 当前工序).ToList();
             foreach (huzhou_DataRefence dataRefence in dataRefenceList)
             {
-                if (dataRefence.data_no != "" && dataRefence.data_no != null)
+                if (dataRefence.数据号 != "" && dataRefence.数据号 != null)
                 {
                     LimitData limitData = new LimitData();
-                    limitData.process_no = dataRefence.process_no;
-                    limitData.data_no = dataRefence.data_no;
-                    if (dataRefence.data_type.ToString() != null && dataRefence.data_type.ToString() != "")
-                        limitData.data_type = int.Parse(dataRefence.data_type.ToString());
-                    limitData.data_name = dataRefence.data_name;
-                    limitData.sign_name = dataRefence.sign_name;
+                    limitData.process_no = dataRefence.工序;
+                    limitData.data_no = dataRefence.数据号;
+                    if (dataRefence.数据类型.ToString() != null && dataRefence.数据类型.ToString() != "")
+                        limitData.data_type = int.Parse(dataRefence.数据类型.ToString());
+                    limitData.data_name = dataRefence.数据名称;
+                    limitData.PLC地址 = dataRefence.PLC地址;
                     limitData.length_check = "";
                     limitDatas.Add(limitData.data_no, limitData);
                 }

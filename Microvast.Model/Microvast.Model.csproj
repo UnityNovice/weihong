@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataRefence.cs" />
+    <Compile Include="huzhou_DataRefence.cs" />
     <Compile Include="huzhou_产品型号.cs" />
     <Compile Include="huzhou_产品数据报表.cs" />
     <Compile Include="huzhou_产线基础数据.cs" />

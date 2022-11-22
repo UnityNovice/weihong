@@ -607,7 +607,17 @@ namespace ScreenDemo1.Pages.基础信息
             }
             else
             {
+                //if(Tablename== "DataRefence")
+                //{
+                //    sql = $"select  * from huzhou_{Tablename} where process_no =  '" + ProcessNoComboBox.Text.ToString() + "'";
+                //}
+                //else
+                //{
+                //    sql = $"select  * from huzhou_{Tablename} where 工序 =  '" + ProcessNoComboBox.Text.ToString() + "'";
+                //}
+
                 sql = $"select  * from huzhou_{Tablename} where 工序 =  '" + ProcessNoComboBox.Text.ToString() + "'";
+
             }
             var dt = sqlSugarServerHelper.db.Ado.GetDataTable(sql);
             DataInfo.Clear();
