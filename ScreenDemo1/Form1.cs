@@ -272,7 +272,6 @@ namespace ScreenDemo1
         {
             string[] NowMenu = ChooseFullPath.Replace("▼", "").Split("\\");
             string[] MenuPermissionsDo = 当前允许菜单项.Split(",");
-            //  if(数采管理)
             foreach (string n in NowMenu)
             {
                 foreach (string n2 in MenuPermissionsDo)
@@ -297,5 +296,7 @@ namespace ScreenDemo1
             //DisConnect_OPC();
             System.Environment.Exit(0);
         }
+
+
     }
 }
