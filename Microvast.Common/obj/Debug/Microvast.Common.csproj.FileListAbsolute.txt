@@ -40,3 +40,17 @@ C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Commo
 C:\Users\2200214\Source\Repos\weihong\Microvast.Common\obj\Debug\Microvast.Common.pdb
 C:\Users\2200214\source\repos\weihong\Microvast.Common\bin\Debug\S7.Net.dll
 C:\Users\2200214\source\repos\weihong\Microvast.Common\bin\Debug\S7.Net.xml
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\Microvast.Common.dll.config
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\Microvast.Common.dll
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\Microvast.Common.pdb
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\MiniExcel.dll
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\Newtonsoft.Json.dll
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\S7.Net.dll
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\SqlSugar.dll
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\Newtonsoft.Json.xml
+E:\微宏git二次拉取\Microvast.Common\bin\Debug\S7.Net.xml
+E:\微宏git二次拉取\Microvast.Common\obj\Debug\Microvast.Common.csproj.AssemblyReference.cache
+E:\微宏git二次拉取\Microvast.Common\obj\Debug\Microvast.Common.csproj.CoreCompileInputs.cache
+E:\微宏git二次拉取\Microvast.Common\obj\Debug\Microvast.Common.csproj.CopyComplete
+E:\微宏git二次拉取\Microvast.Common\obj\Debug\Microvast.Common.dll
+E:\微宏git二次拉取\Microvast.Common\obj\Debug\Microvast.Common.pdb

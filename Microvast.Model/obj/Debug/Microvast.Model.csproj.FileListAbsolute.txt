@@ -22,3 +22,11 @@ C:\Users\2200214\Source\Repos\weihong\Microvast.Model\obj\Debug\Microvast.Model.
 C:\Users\2200214\Source\Repos\weihong\Microvast.Model\obj\Debug\Microvast.Model.csproj.CopyComplete
 C:\Users\2200214\Source\Repos\weihong\Microvast.Model\obj\Debug\Microvast.Model.dll
 C:\Users\2200214\Source\Repos\weihong\Microvast.Model\obj\Debug\Microvast.Model.pdb
+E:\微宏git二次拉取\Microvast.Model\bin\Debug\Microvast.Model.dll
+E:\微宏git二次拉取\Microvast.Model\bin\Debug\Microvast.Model.pdb
+E:\微宏git二次拉取\Microvast.Model\bin\Debug\SqlSugar.dll
+E:\微宏git二次拉取\Microvast.Model\obj\Debug\Microvast.Model.csproj.AssemblyReference.cache
+E:\微宏git二次拉取\Microvast.Model\obj\Debug\Microvast.Model.csproj.CoreCompileInputs.cache
+E:\微宏git二次拉取\Microvast.Model\obj\Debug\Microvast.Model.csproj.CopyComplete
+E:\微宏git二次拉取\Microvast.Model\obj\Debug\Microvast.Model.dll
+E:\微宏git二次拉取\Microvast.Model\obj\Debug\Microvast.Model.pdb

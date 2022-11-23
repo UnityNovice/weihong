@@ -405,6 +405,13 @@ namespace Test.NewFolder1
                 {
                     TempButton.BackColor = System.Drawing.Color.Lime;
                     TempButton.ForeColor = System.Drawing.Color.Black;
+                    var 物料基础信息 = 通用Service.切换投料口(FeedName);
+                    this.label3.Text = 物料基础信息.物料ID;
+                    this.需求物料代码label.Text = 物料基础信息.物料代码;
+                    this.需求物料材料名称label.Text = 物料基础信息.材料名称;
+                    this.需求物料中文全称label.Text = 物料基础信息.中文全称;
+                    this.需求物料规格label.Text = 物料基础信息.规格;
+                    this.需求物料保质期label.Text = 物料基础信息.保质期;
                 }));
             }
             //BeginInvoke()

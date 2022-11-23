@@ -333,6 +333,7 @@ namespace ScreenDemo1
                 return readList;
             }
         }
+        //TODO:
         private void InsertSQL(Dictionary<string, OpcConnect> opcConnect)
         {
             string OkFlag = "";
@@ -400,6 +401,7 @@ namespace ScreenDemo1
                         string info = "PLC数据前后矛盾！";
                         // Global.addLogs(info, 2);
                         // log.Info(info);
+                        // TODO:Log文件
                         return;
                     }
                 }
@@ -498,6 +500,7 @@ namespace ScreenDemo1
             int res = sqlSugarServerHelper.db.Insertable(microVastProcessProperty).ExecuteCommand();
             if (res == 1)
             {
+
                 write(2, false);
             }
             else

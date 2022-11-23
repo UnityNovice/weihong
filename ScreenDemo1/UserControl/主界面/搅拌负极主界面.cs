@@ -63,7 +63,7 @@ namespace Test.NewFolder1
         public void updateLogs(string logString, int logType = 1)
         {
             DataGridView dgvloglist = null;
-            logString = string.Format("{0} {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), logString);
+            //logString = string.Format("{0} {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), logString);
             BindingList<LogListSingle> bindloglist = null;
             BeginInvoke(new Action(delegate
             {
@@ -343,6 +343,7 @@ namespace Test.NewFolder1
         }
         private void 运行记录_Click_1(object sender, EventArgs e)
         {
+            刷新运行记录();
             if (dgvDoInfoGroupBox.Visible == false)
             {
                 dgvDoInfoGroupBox.Visible = true;
@@ -358,6 +359,11 @@ namespace Test.NewFolder1
                 异常结果labelTitle.Visible = false;
             }
         }
+        private void 刷新运行记录()
+        {
+            string hehe = 通用Service.读取运行日志();
+            updateLogs(hehe);
+        }
         private void uiButton1_Click(object sender, EventArgs e)
         {
             AGV叫料 aGV = new AGV叫料();
@@ -370,6 +376,7 @@ namespace Test.NewFolder1
         }
         private void ChooseFeedingOpening(String FeedName)
         {
+            通用Service.记录运行日志("点击了"+ FeedName);
             for (int i = 1; i < 5; i++)
             {
                 Sunny.UI.UIButton TempButton1;
@@ -391,8 +398,16 @@ namespace Test.NewFolder1
                 {
                     TempButton.BackColor = System.Drawing.Color.Lime;
                     TempButton.ForeColor = System.Drawing.Color.Black;
+                    var 物料基础信息 = 通用Service.切换投料口(FeedName);
+                    this.label3.Text = 物料基础信息.物料ID;
+                    this.需求物料代码label.Text = 物料基础信息.物料代码;
+                    this.需求物料材料名称label.Text = 物料基础信息.材料名称;
+                    this.需求物料中文全称label.Text = 物料基础信息.中文全称;
+                    this.需求物料规格label.Text = 物料基础信息.规格;
+                    this.需求物料保质期label.Text = 物料基础信息.保质期;
                 }));
             }
+            刷新运行记录();
             //BeginInvoke()
         }
         private void 投料口2_Click(object sender, EventArgs e)
@@ -629,6 +644,7 @@ namespace Test.NewFolder1
         #endregion
         private void uiButton2_Click(object sender, EventArgs e)
         {
+            通用Service.记录运行日志("有人扫码了");
             string scanStr = 当前物料二维码txt.Text;
             var 扫描解析 = 扫描Service.GetScan(scanStr);
             if (!string.IsNullOrEmpty(扫描解析.数量))

@@ -4,6 +4,7 @@ using Microvast.Model;
 using Microvast.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace Microvast.Service
         public static List<WorkOrder> 加载工单(string aa)
         {
             SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
-            var 生产工单s = sqlSugarServerHelper.db.Queryable<huzhou_生产工单>().Where(a => a.工序.Contains(aa)).Where(a=> a.状态=="未生产"|| a.状态 == "暂停中"|| a.状态 == "生产中").ToList();
+            var 生产工单s = sqlSugarServerHelper.db.Queryable<huzhou_生产工单>().Where(a => a.工序.Contains(aa)).Where(a => a.状态 == "未生产" || a.状态 == "暂停中" || a.状态 == "生产中").ToList();
             List<WorkOrder> workOrders = new List<WorkOrder>();
             for (int i = 0; i < 生产工单s.Count; i++)
             {
@@ -39,6 +40,91 @@ namespace Microvast.Service
                 workOrders.Add(workOrder);
             }
             return workOrders;
+        }
+
+        public static huzhou_基础物料信息表 切换投料口(string dogHouse)
+        {
+            SqlSugarServerHelper sqlSugarServerHelper = new SqlSugarServerHelper();
+            var 投料口基础数据 = sqlSugarServerHelper.db.Queryable<huzhou_基础物料信息表>()
+                .LeftJoin<huzhou_投料口基础数据>((c, t) => c.物料代码 == t.物料代码)
+                .Where((c, t) => t.投料口代码 == dogHouse)
+                .Select((c, t) => c)
+                .First();
+            ;
+            return 投料口基础数据;
+        }
+
+        #region 记录运行和异常日志
+        public static void 记录运行日志(string txt)
+        {
+            string now_date = DateTime.Now.ToString("yyyyMMdd");
+            string path = Path.Combine(Environment.CurrentDirectory, now_date);
+            if (!Directory.Exists(path))
+            {
+                //创建文件夹
+                Directory.CreateDirectory(path);
+            }
+            Write2(txt, path);
+        }
+
+
+        public static void 记录异常日志(string txt)
+        {
+            string now_date = DateTime.Now.ToString("yyyyMMdd");
+            string path = Path.Combine(Environment.CurrentDirectory, now_date);
+            if (!Directory.Exists(path))
+            {
+                //创建文件夹
+                string activeDir = Environment.CurrentDirectory;
+                string newPath = Path.Combine(activeDir, now_date);
+                Directory.CreateDirectory(newPath);
+                //在文件夹中创建.txt文件，并写值
+                Write2(txt, newPath, "异常日志");
+            }
+        }
+
+        public static void Write2(string Logstring, string newPath, string type = "运行日志")
+        {
+            string 工号 = Store.工号;
+            string 角色 = Store.角色;
+            string 名称 = Store.名称;
+            string 日期 = DateTime.Now.ToString("F");
+            Logstring = $"日期:{日期} 工号:{工号} 角色:{角色} 名称:{名称} " + Logstring;
+            string path = newPath + "\\" + type + ".txt";
+            if (!File.Exists(path))
+            {
+                //创建.txt文件
+                FileStream stream = File.Create(path);
+                stream.Close();
+                stream.Dispose();
+            }
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                //写入文件
+                writer.WriteLine(Logstring+"\r\n");
+                writer.Close();
+            }
+        } 
+        #endregion
+
+        public static string 读取运行日志()
+        {
+            string now_date = DateTime.Now.ToString("yyyyMMdd");
+            string path = Path.Combine(Environment.CurrentDirectory, now_date);
+            path= Path.Combine(path, "运行日志.txt");
+            List<string> vs = new List<string>();
+            StringBuilder sb = new StringBuilder();
+            using (FileStream fileStream = new FileStream(path, FileMode.Open))
+            {
+                StreamReader sr = new StreamReader(fileStream);
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    sb.AppendLine(line);
+                    vs.Add(line);
+                }
+            }
+            return sb.ToString();
         }
     }
 }
