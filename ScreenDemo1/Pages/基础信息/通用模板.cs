@@ -615,9 +615,7 @@ namespace ScreenDemo1.Pages.基础信息
                 //{
                 //    sql = $"select  * from huzhou_{Tablename} where 工序 =  '" + ProcessNoComboBox.Text.ToString() + "'";
                 //}
-
                 sql = $"select  * from huzhou_{Tablename} where 工序 =  '" + ProcessNoComboBox.Text.ToString() + "'";
-
             }
             var dt = sqlSugarServerHelper.db.Ado.GetDataTable(sql);
             DataInfo.Clear();

@@ -296,7 +296,5 @@ namespace ScreenDemo1
             //DisConnect_OPC();
             System.Environment.Exit(0);
         }
-
-
     }
 }
